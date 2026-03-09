@@ -1,124 +1,24 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { HiCalendar, HiLocationMarker, HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
+import { eventsData } from '../data/eventsData'
 
 const EventsSection = () => {
   const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)
+  const [filter, setFilter] = useState('all')
   const itemsPerPage = 6
 
-  const events = [
-    {
-      title: "Africa The Future Conference 2025",
-      category: "Conference",
-      date: "January 2025",
-      location: "Lagos, Nigeria",
-      description: "Annual flagship conference on digital transformation and civic engagement",
-      status: "completed",
-      color: "blue"
-    },
-    {
-      title: "YANGG Leadership Academy Cohort 2",
-      category: "Training",
-      date: "March 2025",
-      location: "Multi-country",
-      description: "Second cohort of our comprehensive leadership development program",
-      status: "upcoming",
-      color: "green"
-    },
-    {
-      title: "She Leads Summit",
-      category: "Women Empowerment",
-      date: "May 2025",
-      location: "Accra, Ghana",
-      description: "Empowering young African women to take leadership roles",
-      status: "upcoming",
-      color: "pink"
-    },
-    {
-      title: "Afripreneur Pitch Competition",
-      category: "Entrepreneurship",
-      date: "July 2025",
-      location: "Nairobi, Kenya",
-      description: "Young innovators pitch their solutions for funding and mentorship",
-      status: "upcoming",
-      color: "purple"
-    },
-    {
-      title: "Youth for Sustainable Innovations",
-      category: "SDG Workshop",
-      date: "September 2025",
-      location: "Banjul, Gambia",
-      description: "Hands-on workshop on creating sustainable solutions for local challenges",
-      status: "upcoming",
-      color: "teal"
-    },
-    {
-      title: "African Youths Virtual SDG Training",
-      category: "Online Training",
-      date: "Ongoing",
-      location: "Virtual",
-      description: "Comprehensive online training on Sustainable Development Goals",
-      status: "ongoing",
-      color: "indigo"
-    },
-    {
-      title: "Tech Innovation Bootcamp",
-      category: "Training",
-      date: "November 2025",
-      location: "Kigali, Rwanda",
-      description: "Intensive bootcamp on emerging technologies and digital innovation",
-      status: "upcoming",
-      color: "blue"
-    },
-    {
-      title: "Pan-African Youth Forum",
-      category: "Conference",
-      date: "December 2025",
-      location: "Addis Ababa, Ethiopia",
-      description: "Continental gathering of young leaders to discuss Africa's future",
-      status: "upcoming",
-      color: "green"
-    },
-    {
-      title: "Climate Action Workshop",
-      category: "Workshop",
-      date: "February 2026",
-      location: "Cape Town, South Africa",
-      description: "Youth-led initiatives for climate change mitigation and adaptation",
-      status: "upcoming",
-      color: "teal"
-    },
-    {
-      title: "Digital Marketing Masterclass",
-      category: "Training",
-      date: "April 2026",
-      location: "Virtual",
-      description: "Learn digital marketing strategies for African businesses",
-      status: "upcoming",
-      color: "purple"
-    },
-    {
-      title: "Women in Tech Conference",
-      category: "Conference",
-      date: "June 2026",
-      location: "Dakar, Senegal",
-      description: "Celebrating and empowering women in technology across Africa",
-      status: "upcoming",
-      color: "pink"
-    },
-    {
-      title: "Social Entrepreneurship Summit",
-      category: "Conference",
-      date: "August 2026",
-      location: "Kampala, Uganda",
-      description: "Connecting social entrepreneurs with investors and mentors",
-      status: "upcoming",
-      color: "indigo"
-    }
-  ]
+  // Use real events data and take only the first 12 for the home page
+  const allEvents = eventsData.slice(0, 12)
+  
+  // Filter events based on selected category
+  const events = filter === 'all' 
+    ? allEvents 
+    : allEvents.filter(event => event.category === filter)
 
   // Calculate pagination
   const totalPages = Math.ceil(events.length / itemsPerPage)
@@ -136,6 +36,11 @@ const EventsSection = () => {
 
   const handlePageClick = (pageNum) => {
     setCurrentPage(pageNum)
+  }
+  
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter)
+    setCurrentPage(1) // Reset to first page when filter changes
   }
 
   const getStatusColor = (status) => {
@@ -156,20 +61,18 @@ const EventsSection = () => {
     }
   }
 
-  const getCardColor = (color) => {
+  const getCardColor = (category) => {
     const colors = {
-      blue: 'from-blue-50 to-blue-100/50',
-      green: 'from-green-50 to-green-100/50',
-      pink: 'from-pink-50 to-pink-100/50',
-      purple: 'from-purple-50 to-purple-100/50',
-      teal: 'from-teal-50 to-teal-100/50',
-      indigo: 'from-indigo-50 to-indigo-100/50'
+      conference: 'from-blue-50 to-blue-100/50',
+      training: 'from-green-50 to-green-100/50',
+      workshop: 'from-pink-50 to-pink-100/50',
+      campaign: 'from-purple-50 to-purple-100/50'
     }
-    return colors[color] || colors.blue
+    return colors[category] || 'from-gray-50 to-gray-100/50'
   }
 
   return (
-    <section id="events" className="section-container">
+    <section id="events" className="section-container font-['Montserrat']">
       <motion.div 
         variants={fadeIn('up', 0.2)}
         initial="hidden"
@@ -178,79 +81,110 @@ const EventsSection = () => {
       >
         <motion.h2 
           variants={textVariant(0.2)}
-          className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white"
+          className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white font-['Montserrat']"
         >
           {t('events.title')}
         </motion.h2>
         <motion.p 
           variants={fadeIn('up', 0.4)}
-          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto font-['Montserrat']"
         >
           {t('events.subtitle')}
         </motion.p>
       </motion.div>
 
-      <motion.div 
+      {/* Filter Buttons */}
+      <motion.div
         variants={fadeIn('up', 0.3)}
+        initial="hidden"
+        whileInView="show"
+        className="flex flex-wrap justify-center gap-3 mb-8"
+      >
+        {['all', 'conference', 'training', 'workshop', 'campaign'].map((category) => (
+          <button
+            key={category}
+            onClick={() => handleFilterChange(category)}
+            className={`px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer font-['Montserrat'] ${
+              filter === category
+                ? 'bg-blue-600 text-white shadow-lg'
+                : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+            }`}
+          >
+            {category.charAt(0).toUpperCase() + category.slice(1)}
+          </button>
+        ))}
+      </motion.div>
+
+      <motion.div 
+        variants={fadeIn('up', 0.4)}
         initial="hidden"
         whileInView="show"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8"
       >
-        <AnimatePresence>
-          {currentEvents.map((event, index) => (
+        {currentEvents.length === 0 ? (
+          <motion.div 
+            variants={fadeIn('up', 0.5)}
+            className="col-span-full text-center py-12"
+          >
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
+              No events found in this category. Try selecting a different filter.
+            </p>
+          </motion.div>
+        ) : (
+          <AnimatePresence mode="wait">
+            {currentEvents.map((event, index) => (
             <motion.div 
-              key={`${event.title}-${currentPage}`}
+              key={`${event.id}-${currentPage}-${filter}`}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               whileHover={{ scale: 1.03, y: -5 }}
-              className={`bg-gradient-to-br ${getCardColor(event.color)} dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent dark:border-gray-600`}
+              className={`bg-gradient-to-br ${getCardColor(event.category)} dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent dark:border-gray-600`}
             >
               <div className="flex justify-between items-start mb-4">
-                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(event.status)}`}>
+                <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(event.status)} font-['Montserrat']`}>
                   {getStatusText(event.status)}
                 </span>
-                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 px-3 py-1 rounded-full">
-                  {event.category}
+                <span className="text-xs font-medium text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 px-3 py-1 rounded-full font-['Montserrat']">
+                  {event.category.charAt(0).toUpperCase() + event.category.slice(1)}
                 </span>
               </div>
 
-              <motion.h3 
-                variants={textVariant(0.3)}
-                className="text-xl font-bold text-gray-900 dark:text-white mb-3"
+              <h3 
+                className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 font-['Montserrat']"
               >
                 {event.title}
-              </motion.h3>
+              </h3>
 
-              <motion.p 
-                variants={fadeIn('up', 0.4)}
-                className="text-gray-600 dark:text-gray-300 text-sm mb-4"
+              <p 
+                className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-3 font-['Montserrat']"
               >
-                {event.description}
-              </motion.p>
+                {event.shortDescription}
+              </p>
 
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                  <HiCalendar className="w-4 h-4" />
-                  <span>{event.date}</span>
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-['Montserrat']">
+                  <HiCalendar className="w-4 h-4 flex-shrink-0" />
+                  <span className="line-clamp-1">{event.date}</span>
                 </div>
-                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                  <HiLocationMarker className="w-4 h-4" />
+                <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 font-['Montserrat']">
+                  <HiLocationMarker className="w-4 h-4 flex-shrink-0" />
                   <span>{event.location}</span>
                 </div>
               </div>
 
-              <motion.button 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700 cursor-pointer"
-              >
-                {t('events.learnMore')}
-              </motion.button>
+              <Link to={`/events/${event.id}`}>
+                <button 
+                  className="mt-6 w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white px-4 py-2 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors border border-gray-200 dark:border-gray-700 cursor-pointer hover:scale-105 active:scale-95 transform font-['Montserrat']"
+                >
+                  {t('events.learnMore')}
+                </button>
+              </Link>
             </motion.div>
           ))}
         </AnimatePresence>
+        )}
       </motion.div>
 
       {/* Pagination Controls */}
@@ -324,6 +258,24 @@ const EventsSection = () => {
           Showing {startIndex + 1}-{Math.min(endIndex, events.length)} of {events.length} events
         </motion.p>
       )}
+
+      {/* View All Events Button */}
+      <motion.div
+        variants={fadeIn('up', 0.5)}
+        initial="hidden"
+        whileInView="show"
+        className="text-center mt-12"
+      >
+        <Link to="/events">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors shadow-lg cursor-pointer"
+          >
+            View All Events & Programs
+          </motion.button>
+        </Link>
+      </motion.div>
     </section>
   )
 }

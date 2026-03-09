@@ -1,11 +1,51 @@
 import React from 'react'
-import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const location = useLocation()
+  
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    
+    // If it's a hash link
+    if (href.startsWith('#')) {
+      // If we're not on the home page, navigate to home first
+      if (location.pathname !== '/') {
+        navigate('/')
+        // Wait for navigation to complete, then scroll
+        setTimeout(() => {
+          const element = document.querySelector(href)
+          if (element) {
+            const offset = 80
+            const elementPosition = element.getBoundingClientRect().top
+            const offsetPosition = elementPosition + window.pageYOffset - offset
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            })
+          }
+        }, 100)
+      } else {
+        // Already on home page, just scroll
+        const element = document.querySelector(href)
+        if (element) {
+          const offset = 80
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - offset
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          })
+        }
+      }
+    }
+  }
   
   const footerLinks = {
     company: [
@@ -70,24 +110,43 @@ const Footer = () => {
             >
               <motion.a 
                 whileHover={{ scale: 1.1 }}
-                href="#" 
-                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-colors"
+                href="https://www.linkedin.com/company/yangg/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-700 dark:hover:bg-blue-600 hover:text-white transition-colors cursor-pointer"
+                aria-label="LinkedIn"
               >
-                <FaFacebookF className="w-5 h-5" />
+                <FaLinkedinIn className="w-5 h-5" />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1 }}
-                href="#" 
-                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-400 dark:hover:bg-blue-500 hover:text-white transition-colors"
+                href="https://x.com/yangg_official"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-black dark:hover:bg-gray-900 hover:text-white transition-colors cursor-pointer"
+                aria-label="X (Twitter)"
               >
                 <FaTwitter className="w-5 h-5" />
               </motion.a>
               <motion.a 
                 whileHover={{ scale: 1.1 }}
-                href="#" 
-                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-700 dark:hover:bg-blue-600 hover:text-white transition-colors"
+                href="https://www.facebook.com/share/1AxdZ9q8xH/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-colors cursor-pointer"
+                aria-label="Facebook"
               >
-                <FaLinkedinIn className="w-5 h-5" />
+                <FaFacebookF className="w-5 h-5" />
+              </motion.a>
+              <motion.a 
+                whileHover={{ scale: 1.1 }}
+                href="https://www.instagram.com/yanggofficial_sdg?igsh=MWE0b2l0MGVvN3dxbg%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gradient-to-br hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 hover:text-white transition-colors cursor-pointer"
+                aria-label="Instagram"
+              >
+                <FaInstagram className="w-5 h-5" />
               </motion.a>
             </motion.div>
           </motion.div>
@@ -121,7 +180,8 @@ const Footer = () => {
                         <motion.a 
                           whileHover={{ x: 5 }}
                           href={link.href} 
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+                          onClick={(e) => handleNavClick(e, link.href)}
+                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer"
                         >
                           {link.name}
                         </motion.a>

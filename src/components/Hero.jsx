@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { FaGlobeAfrica, FaStar } from "react-icons/fa";
@@ -48,17 +49,26 @@ const Hero = () => {
           variants={fadeIn('up', 0.5)}
           initial="hidden"
           whileInView="show"
-          className="flex gap-3 max-w-md"
+          className="flex gap-3 max-w-md flex-wrap"
         >
           {/* Email Form */}
-          <input
-            type="email"
-            placeholder={t('hero.emailPlaceholder')}
-            className="flex-1 px-6 py-4 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all"
-          />
-          <button className="bg-green-600 dark:bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-700 dark:hover:bg-green-600 cursor-pointer transition-all hover:shadow-lg hover:shadow-green-100 dark:hover:shadow-green-900/50 active:scale-95">
-            →
-          </button>
+          <div className="flex gap-3 flex-1 min-w-full">
+            <input
+              type="email"
+              placeholder={t('hero.emailPlaceholder')}
+              className="flex-1 px-6 py-4 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all"
+            />
+            <button className="bg-green-600 dark:bg-green-500 text-white px-8 py-4 rounded-xl hover:bg-green-700 dark:hover:bg-green-600 cursor-pointer transition-all hover:shadow-lg hover:shadow-green-100 dark:hover:shadow-green-900/50 active:scale-95">
+              →
+            </button>
+          </div>
+          
+          {/* Test Link to Events Page */}
+          <Link to="/events" className="w-full">
+            <button className="w-full bg-blue-600 dark:bg-blue-500 text-white px-6 py-3 rounded-xl hover:bg-blue-700 dark:hover:bg-blue-600 cursor-pointer transition-all hover:shadow-lg font-medium">
+              View All Events & Programs →
+            </button>
+          </Link>
         </motion.div>
       </div>
 

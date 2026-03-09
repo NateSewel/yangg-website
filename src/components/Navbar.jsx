@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { HiMenu, HiX, HiMoon, HiSun } from 'react-icons/hi'
 import { motion } from "framer-motion";
 import { fadeIn} from "../utils/motion";
@@ -11,18 +12,23 @@ const Navbar = () => {
   const [activeLink, setActiveLink] = useState('#home')
   const { isDark, toggleTheme } = useTheme()
   const { t } = useTranslation()
+  const navigate = useNavigate()
+  const location = useLocation()
 
   const navLinks = [
-    { href: "#home", label: t('nav.home') },
-    { href: "#about", label: t('nav.about') },
-    { href: "#programs", label: t('nav.programs') },
-    { href: "#events", label: t('nav.events') },
-    { href: "#gallery", label: t('nav.gallery') },
-    { href: "#testimonials", label: t('nav.testimonials') },
+    { href: "#home", label: t('nav.home'), route: '/' },
+    { href: "#about", label: t('nav.about'), route: '/' },
+    { href: "#programs", label: t('nav.programs'), route: '/' },
+    { href: "#events", label: t('nav.events'), route: '/' },
+    { href: "#gallery", label: t('nav.gallery'), route: '/' },
+    { href: "#testimonials", label: t('nav.testimonials'), route: '/' },
   ]
 
   // Scroll spy functionality
   useEffect(() => {
+    // Only run scroll spy on home page
+    if (location.pathname !== '/') return
+
     const handleScroll = () => {
       const sections = navLinks.map(link => document.querySelector(link.href))
       const scrollPosition = window.scrollY + 100 // Offset for navbar height
@@ -40,7 +46,41 @@ const Navbar = () => {
     handleScroll() // Call once on mount
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [location.pathname])
+
+  // Handle navigation clicks
+  const handleNavClick = (e, link) => {
+    e.preventDefault()
+    
+    // If we're not on home page, navigate to home first
+    if (location.pathname !== '/') {
+      navigate('/')
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        const element = document.querySelector(link.href)
+        if (element) {
+          const offset = 80
+          const elementPosition = element.offsetTop - offset
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          })
+        }
+      }, 100)
+    } else {
+      // Already on home page, just scroll
+      const element = document.querySelector(link.href)
+      if (element) {
+        const offset = 80
+        const elementPosition = element.offsetTop - offset
+        window.scrollTo({
+          top: elementPosition,
+          behavior: 'smooth'
+        })
+      }
+    }
+    setIsMenuOpen(false)
+  }
 
   return (
     <motion.nav 
@@ -55,6 +95,10 @@ const Navbar = () => {
         <motion.div 
           variants={fadeIn('right', 0.3)}
           className="flex items-center gap-2 cursor-pointer"
+          onClick={() => {
+            navigate('/')
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
         >
           <motion.div 
             whileHover={{ scale: 1.1 }}
@@ -76,19 +120,8 @@ const Navbar = () => {
               key={index}
               variants={fadeIn('down', 0.1 * (index + 1))}
               href={link.href}
-              onClick={(e) => {
-                e.preventDefault()
-                const element = document.querySelector(link.href)
-                if (element) {
-                  const offset = 80 // Navbar height
-                  const elementPosition = element.offsetTop - offset
-                  window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth'
-                  })
-                }
-              }}
-              className={`text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all
+              onClick={(e) => handleNavClick(e, link)}
+              className={`text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all cursor-pointer
                 ${activeLink === link.href ? 'text-blue-600 after:w-full  ' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               {link.label}
@@ -101,18 +134,7 @@ const Navbar = () => {
           {/* CTA Button - Desktop Only */}
           <motion.a
             href="#contact"
-            onClick={(e) => {
-              e.preventDefault()
-              const element = document.querySelector('#contact')
-              if (element) {
-                const offset = 80
-                const elementPosition = element.offsetTop - offset
-                window.scrollTo({
-                  top: elementPosition,
-                  behavior: 'smooth'
-                })
-              }
-            }}
+            onClick={(e) => handleNavClick(e, { href: '#contact' })}
             variants={fadeIn('left', 0.3)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -174,20 +196,8 @@ const Navbar = () => {
                 key={index}
                 variants={fadeIn('right', 0.1 * (index + 1))}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault()
-                  const element = document.querySelector(link.href)
-                  if (element) {
-                    const offset = 80
-                    const elementPosition = element.offsetTop - offset
-                    window.scrollTo({
-                      top: elementPosition,
-                      behavior: 'smooth'
-                    })
-                  }
-                  setIsMenuOpen(false)
-                }}
-                className={`block text-sm font-medium py-2
+                onClick={(e) => handleNavClick(e, link)}
+                className={`block text-sm font-medium py-2 cursor-pointer
                   ${activeLink === link.href ? 'text-blue-600' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
               >
                 {link.label}
@@ -195,23 +205,11 @@ const Navbar = () => {
             ))}
             <motion.a
               href="#contact"
-              onClick={(e) => {
-                e.preventDefault()
-                const element = document.querySelector('#contact')
-                if (element) {
-                  const offset = 80
-                  const elementPosition = element.offsetTop - offset
-                  window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth'
-                  })
-                }
-                setIsMenuOpen(false)
-              }}
+              onClick={(e) => handleNavClick(e, { href: '#contact' })}
               variants={fadeIn('up', 0.4)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-100 cursor-pointer text-center"
+              className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-100 cursor-pointer text-center block"
             >
               {t('nav.getInTouch')}
             </motion.a>
