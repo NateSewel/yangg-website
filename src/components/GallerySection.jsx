@@ -56,7 +56,7 @@ const GallerySection = () => {
   const handleNextPage = () => {
     setDirection(1) // Slide from right
     setCurrentPage(prev => Math.min(prev + 1, totalPages))
-    // Smooth scroll to gallery section
+    // Smooth scroll to gallery section in webpage
     const gallerySection = document.querySelector('#gallery')
     if (gallerySection) {
       const offset = 80
