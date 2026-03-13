@@ -60,29 +60,29 @@ const ContactSection = () => {
         variants={fadeIn('up', 0.2)}
         initial="hidden"
         whileInView="show"
-        className="text-center mb-12"
+        className="text-center mb-8 md:mb-12"
       >
         <motion.h2 
           variants={textVariant(0.2)}
-          className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white"
+          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white"
         >
           Get in Touch
         </motion.h2>
         <motion.p 
           variants={fadeIn('up', 0.4)}
-          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto text-sm sm:text-base"
         >
           Have questions about our programs? Want to partner with us? We'd love to hear from you!
         </motion.p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
         {/* Contact Info Cards */}
         <motion.div 
           variants={fadeIn('right', 0.3)}
           initial="hidden"
           whileInView="show"
-          className="lg:col-span-1 space-y-6"
+          className="lg:col-span-1 space-y-4 md:space-y-6"
         >
           {contactInfo.map((info, index) => (
             <motion.a
@@ -90,17 +90,17 @@ const ContactSection = () => {
               href={info.link}
               variants={fadeIn('up', 0.2 * (index + 1))}
               whileHover={{ scale: 1.03, y: -5 }}
-              className="block bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent dark:border-gray-700"
+              className="block bg-white dark:bg-gray-900 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent dark:border-gray-700"
             >
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
                   {info.icon}
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">
+                  <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-1">
                     {info.title}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm">
+                  <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
                     {info.details}
                   </p>
                 </div>
@@ -111,12 +111,12 @@ const ContactSection = () => {
           {/* Additional Info */}
           <motion.div
             variants={fadeIn('up', 0.8)}
-            className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-6 rounded-2xl border border-blue-100 dark:border-blue-800"
+            className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-4 md:p-6 rounded-2xl border border-blue-100 dark:border-blue-800"
           >
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+            <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2">
               Office Hours
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 text-sm">
+            <p className="text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
               Monday - Friday: 9:00 AM - 5:00 PM (WAT)
             </p>
           </motion.div>
@@ -132,12 +132,12 @@ const ContactSection = () => {
           <motion.form 
             variants={fadeIn('up', 0.4)}
             onSubmit={handleSubmit}
-            className="bg-white dark:bg-gray-900 p-8 rounded-2xl shadow-md border border-transparent dark:border-gray-700"
+            className="bg-white dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-2xl shadow-md border border-transparent dark:border-gray-700"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
               {/* Name Input */}
               <motion.div variants={fadeIn('right', 0.5)}>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Full Name
                 </label>
                 <div className="relative">
@@ -151,7 +151,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all"
+                    className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all text-sm md:text-base"
                     placeholder="John Doe"
                   />
                 </div>
@@ -159,7 +159,7 @@ const ContactSection = () => {
 
               {/* Email Input */}
               <motion.div variants={fadeIn('left', 0.5)}>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Email Address
                 </label>
                 <div className="relative">
@@ -180,10 +180,10 @@ const ContactSection = () => {
               </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
               {/* Phone Input */}
               <motion.div variants={fadeIn('right', 0.6)}>
-                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="phone" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Phone Number
                 </label>
                 <div className="relative">
@@ -204,7 +204,7 @@ const ContactSection = () => {
 
               {/* Subject Input */}
               <motion.div variants={fadeIn('left', 0.6)}>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                <label htmlFor="subject" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                   Subject
                 </label>
                 <div className="relative">
@@ -226,8 +226,8 @@ const ContactSection = () => {
             </div>
 
             {/* Message Textarea */}
-            <motion.div variants={fadeIn('up', 0.7)} className="mb-6">
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            <motion.div variants={fadeIn('up', 0.7)} className="mb-4 md:mb-6">
+              <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Message
               </label>
               <textarea
@@ -237,7 +237,7 @@ const ContactSection = () => {
                 onChange={handleChange}
                 required
                 rows="6"
-                className="w-full px-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all resize-none"
+                className="w-full px-4 py-2.5 md:py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all resize-none text-sm md:text-base"
                 placeholder="Tell us more about your inquiry..."
               ></textarea>
             </motion.div>
@@ -248,7 +248,7 @@ const ContactSection = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-blue-600 dark:bg-blue-500 text-white px-8 py-4 rounded-xl hover:bg-blue-700 dark:hover:bg-blue-600 cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-100 dark:hover:shadow-blue-900/50 font-medium text-lg"
+              className="w-full bg-blue-600 dark:bg-blue-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-blue-700 dark:hover:bg-blue-600 cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-100 dark:hover:shadow-blue-900/50 font-medium text-base md:text-lg"
             >
               Send Message
             </motion.button>

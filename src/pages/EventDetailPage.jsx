@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { fadeIn, textVariant } from '../utils/motion'
 import { FaCalendar, FaMapMarkerAlt, FaArrowLeft, FaUsers, FaBullseye, FaTrophy } from 'react-icons/fa'
+import { HiX } from 'react-icons/hi'
 import { eventsData } from '../data/eventsData'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -11,6 +12,7 @@ const EventDetailPage = () => {
   const { eventId } = useParams()
   const navigate = useNavigate()
   const event = eventsData.find(e => e.id === eventId)
+  const [showImageModal, setShowImageModal] = useState(false)
 
   if (!event) {
     return (
@@ -42,7 +44,7 @@ const EventDetailPage = () => {
           initial="hidden"
           whileInView="show"
           onClick={() => navigate('/events')}
-          className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:gap-3 transition-all mb-8 cursor-pointer font-['Montserrat']"
+          className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:gap-3 transition-all mb-6 md:mb-8 cursor-pointer font-['Montserrat']"
         >
           <FaArrowLeft />
           <span>Back to Events</span>
@@ -59,12 +61,13 @@ const EventDetailPage = () => {
           {event.image && (
             <motion.div
               variants={fadeIn('up', 0.4)}
-              className="mb-8 rounded-2xl overflow-hidden shadow-xl"
+              className="mb-6 md:mb-8 rounded-2xl overflow-hidden shadow-xl cursor-pointer"
+              onClick={() => setShowImageModal(true)}
             >
               <img 
                 src={event.image} 
                 alt={event.title}
-                className="w-full h-64 md:h-96 object-cover"
+                className="w-full h-[250px] sm:h-[350px] md:h-[450px] object-cover hover:scale-105 transition-transform duration-300"
               />
             </motion.div>
           )}
@@ -80,14 +83,14 @@ const EventDetailPage = () => {
           
           <motion.h1
             variants={textVariant(0.4)}
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-['Montserrat']"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 font-['Montserrat']"
           >
             {event.title}
           </motion.h1>
 
           <motion.p
             variants={fadeIn('up', 0.5)}
-            className="text-xl text-blue-600 dark:text-blue-400 font-semibold mb-6 font-['Montserrat']"
+            className="text-lg sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-4 md:mb-6 font-['Montserrat']"
           >
             {event.theme}
           </motion.p>
@@ -112,10 +115,10 @@ const EventDetailPage = () => {
           variants={fadeIn('up', 0.7)}
           initial="hidden"
           whileInView="show"
-          className="mb-12"
+          className="mb-8 md:mb-12"
         >
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-['Montserrat']">Overview</h2>
-          <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-['Montserrat']">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 font-['Montserrat']">Overview</h2>
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base font-['Montserrat']">
             {event.overview}
           </p>
         </motion.section>
@@ -126,18 +129,18 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 0.8)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <FaBullseye className="text-blue-600 dark:text-blue-400 text-2xl" />
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">Objectives</h2>
+            <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+              <FaBullseye className="text-blue-600 dark:text-blue-400 text-xl md:text-2xl" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">Objectives</h2>
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {event.objectives.map((objective, index) => (
                 <motion.li
                   key={index}
                   variants={fadeIn('right', 0.1 * index)}
-                  className="flex items-start gap-3 text-gray-600 dark:text-gray-300 font-['Montserrat']"
+                  className="flex items-start gap-2 md:gap-3 text-gray-600 dark:text-gray-300 text-sm sm:text-base font-['Montserrat']"
                 >
                   <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
                   <span>{objective}</span>
@@ -153,22 +156,22 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 0.9)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <div className="flex items-center gap-3 mb-6">
-              <FaUsers className="text-green-600 dark:text-green-400 text-2xl" />
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">
+            <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+              <FaUsers className="text-green-600 dark:text-green-400 text-xl md:text-2xl" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">
                 {event.speakers ? 'Speakers' : event.panelists ? 'Panelists' : 'Facilitators'}
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {(event.speakers || event.panelists || event.facilitators)?.map((speaker, index) => (
                 <motion.div
                   key={index}
                   variants={fadeIn('up', 0.1 * index)}
-                  className="p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow"
+                  className="p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow"
                 >
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1 font-['Montserrat']">
+                  <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base font-['Montserrat']">
                     {speaker.name}
                   </h3>
                   {speaker.title && (
@@ -198,10 +201,10 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 1.0)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 font-['Montserrat']">Topics Covered</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6 font-['Montserrat']">Topics Covered</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {event.topics.map((item, index) => (
                 <motion.div
                   key={index}
@@ -226,18 +229,18 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 1.1)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <div className="flex items-center gap-3 mb-4">
-              <FaTrophy className="text-yellow-600 dark:text-yellow-400 text-2xl" />
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">Highlights</h2>
+            <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+              <FaTrophy className="text-yellow-600 dark:text-yellow-400 text-xl md:text-2xl" />
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">Highlights</h2>
             </div>
-            <ul className="space-y-3">
+            <ul className="space-y-2 md:space-y-3">
               {event.highlights.map((highlight, index) => (
                 <motion.li
                   key={index}
                   variants={fadeIn('right', 0.1 * index)}
-                  className="flex items-start gap-3 text-gray-600 dark:text-gray-300 font-['Montserrat']"
+                  className="flex items-start gap-2 md:gap-3 text-gray-600 dark:text-gray-300 text-sm sm:text-base font-['Montserrat']"
                 >
                   <span className="text-yellow-600 dark:text-yellow-400 mt-1">★</span>
                   <span>{highlight}</span>
@@ -253,15 +256,15 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 1.2)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-['Montserrat']">Focus Areas</h2>
-            <ul className="space-y-3">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 font-['Montserrat']">Focus Areas</h2>
+            <ul className="space-y-2 md:space-y-3">
               {event.focusAreas.map((area, index) => (
                 <motion.li
                   key={index}
                   variants={fadeIn('right', 0.1 * index)}
-                  className="flex items-start gap-3 text-gray-600 dark:text-gray-300 font-['Montserrat']"
+                  className="flex items-start gap-2 md:gap-3 text-gray-600 dark:text-gray-300 text-sm sm:text-base font-['Montserrat']"
                 >
                   <span className="text-green-600 dark:text-green-400 mt-1">✓</span>
                   <span>{area}</span>
@@ -277,13 +280,13 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 1.3)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <div className="p-6 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 font-['Montserrat']">
+            <div className="p-4 md:p-6 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
+              <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 font-['Montserrat']">
                 Participation
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 font-['Montserrat']">{event.participants}</p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm sm:text-base font-['Montserrat']">{event.participants}</p>
             </div>
           </motion.section>
         )}
@@ -294,11 +297,11 @@ const EventDetailPage = () => {
             variants={fadeIn('up', 1.4)}
             initial="hidden"
             whileInView="show"
-            className="mb-12"
+            className="mb-8 md:mb-12"
           >
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-['Montserrat']">Impact</h2>
-            <div className="p-6 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-['Montserrat']">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4 font-['Montserrat']">Impact</h2>
+            <div className="p-4 md:p-6 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base font-['Montserrat']">
                 {event.impact}
               </p>
             </div>
@@ -314,7 +317,7 @@ const EventDetailPage = () => {
         >
           <button
             onClick={() => navigate('/events')}
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer font-['Montserrat']"
+            className="bg-blue-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer text-sm sm:text-base font-['Montserrat']"
           >
             View All Events
           </button>
@@ -322,6 +325,45 @@ const EventDetailPage = () => {
       </div>
 
       <Footer />
+
+      {/* Image Lightbox Modal */}
+      <AnimatePresence>
+        {showImageModal && event.image && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowImageModal(false)}
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          >
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => setShowImageModal(false)}
+              className="absolute top-4 right-4 text-white bg-white/10 hover:bg-white/20 p-3 rounded-full backdrop-blur-sm cursor-pointer"
+            >
+              <HiX className="w-6 h-6" />
+            </motion.button>
+            <motion.div
+              initial={{ scale: 0.8, y: 50 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.8, y: 50 }}
+              onClick={(e) => e.stopPropagation()}
+              className="max-w-6xl w-full"
+            >
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-auto rounded-lg"
+              />
+              <div className="mt-4 text-white text-center">
+                <h3 className="text-2xl font-bold mb-2 font-['Montserrat']">{event.title}</h3>
+                <p className="text-gray-300 font-['Montserrat']">{event.theme}</p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

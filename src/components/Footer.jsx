@@ -156,7 +156,7 @@ const Footer = () => {
             variants={fadeIn('left', 0.4)}
             className="lg:col-span-8"
           >
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
                 <motion.div 
                   key={category}
@@ -164,13 +164,13 @@ const Footer = () => {
                 >
                   <motion.h3 
                     variants={textVariant(0.2)}
-                    className="text-lg font-medium mb-4 text-gray-900 dark:text-white"
+                    className="text-base md:text-lg font-medium mb-3 md:mb-4 text-gray-900 dark:text-white"
                   >
                     {t(`footer.${category}`)}
                   </motion.h3>
                   <motion.ul 
                     variants={fadeIn('up', 0.4)}
-                    className="space-y-3"
+                    className="space-y-2 md:space-y-3"
                   >
                     {links.map((link, index) => (
                       <motion.li 
@@ -181,7 +181,7 @@ const Footer = () => {
                           whileHover={{ x: 5 }}
                           href={link.href} 
                           onClick={(e) => handleNavClick(e, link.href)}
-                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer"
+                          className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white cursor-pointer text-sm md:text-base"
                         >
                           {link.name}
                         </motion.a>

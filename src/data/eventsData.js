@@ -1,3 +1,18 @@
+import img1 from "../assets/gallery/1.jpg"
+import img2 from "../assets/gallery/2.jpg"
+import img3 from "../assets/gallery/3.jpg"
+import img4 from "../assets/gallery/4.jpg"
+import img5 from "../assets/gallery/5.jpg"
+import img6 from "../assets/gallery/6.jpg"
+import img7 from "../assets/gallery/7.jpg"
+import img8 from "../assets/gallery/8.jpg"
+import img9 from "../assets/gallery/9.jpg"
+import img10 from "../assets/gallery/10.jpg"
+import img11 from "../assets/gallery/11.jpg"
+import img12 from "../assets/gallery/12.jpg"
+import img13 from "../assets/gallery/13.jpg"
+import img14 from "../assets/gallery/14.jpg"
+
 export const eventsData = [
   {
     id: 'africa-future-conference-2024',
@@ -7,7 +22,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'Local Actions, Global Impact',
-    image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=500&fit=crop',
+    image: img1,
     shortDescription: 'YANGG\'s flagship event bringing together youth leaders, innovators, and policymakers to shape Africa\'s future.',
     overview: 'The Young African Network for Global Goals (YANGG) successfully hosted the third edition of its flagship event, the Africa the Future Conference, on October 5, 2024. This year\'s conference was themed "Local Actions, Global Impact" and sought to inspire and empower young Africans to take transformative actions within their communities that contribute to broader global development objectives.',
     objectives: [
@@ -54,7 +69,7 @@ export const eventsData = [
     status: 'completed',
     category: 'training',
     theme: 'Building a Sustainable Africa for Productivity',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=500&fit=crop',
+    image: img2,
     shortDescription: 'Intensive virtual training series equipping 507 youth participants with SDG knowledge and sustainable development strategies.',
     overview: 'The Young Africans Network for Global Goals (YANGG) launched a groundbreaking virtual initiative titled "African Youths Virtual SDGs Training", held on May 6th, 8th, 10th, 13th, and 15th, 2020. This training series brought together a diverse group of young leaders from Africa and beyond to engage in intensive learning and dialogue centered around sustainable development and productivity.',
     objectives: [
@@ -91,7 +106,7 @@ export const eventsData = [
     status: 'completed',
     category: 'training',
     theme: 'Building Capacities for Africa\'s Sustainable Development',
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
+    image: img3,
     shortDescription: 'A Mindset Tune Session organized by YANGG Uganda to equip young Africans with leadership tools for sustainable development.',
     overview: 'The Young Africans Network for Global Goals – Uganda (YANGG Uganda) organised a high-impact virtual training event on May 16th and 17th, 2020, titled "A Mindset Tune Session Towards the SDGs." This strategic initiative was curated to equip young Africans with the mindset, knowledge, and leadership tools necessary to drive sustainable development.',
     objectives: [
@@ -123,7 +138,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'Re-Inventing the Africa of Our Dream',
-    image: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=500&fit=crop',
+    image: img4,
     shortDescription: 'High-level virtual dialogue with 425 participants exploring leadership transformation and development across Africa.',
     overview: 'On June 5th, 2020, YANGG convened the African Leadership Summit 2020 under the transformative theme "Re-Inventing the Africa of Our Dream." The summit brought together distinguished thought leaders, development strategists, public policy experts, and youth champions.',
     objectives: [
@@ -150,7 +165,7 @@ export const eventsData = [
     status: 'completed',
     category: 'training',
     theme: 'Opportunity Identification Amid COVID-19',
-    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=500&fit=crop',
+    image: img5,
     shortDescription: 'YANGG Togo initiative supporting young school leavers to identify opportunities during the pandemic.',
     overview: 'The Young African Network for Global Goals (YANGG) Togo Chapter launched a virtual initiative aimed at supporting young school leavers to identify and harness opportunities amid the COVID-19 pandemic and beyond.',
     facilitators: [
@@ -177,7 +192,7 @@ export const eventsData = [
     status: 'completed',
     category: 'workshop',
     theme: 'Youth for Sustainable Innovations',
-    image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=500&fit=crop',
+    image: img6,
     shortDescription: 'YANGG Namibia\'s first virtual forum promoting youth-led innovations for sustainable development.',
     overview: 'The Young Africans Network for Global Goals (YANGG) Namibia hosted its first-ever virtual forum under the theme "Youth for Sustainable Innovations" on Friday, 4th September 2020.',
     objectives: [
@@ -203,7 +218,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'AFRIPRENEUR and Young Innovators',
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=500&fit=crop',
+    image: img7,
     shortDescription: 'Virtual summit showcasing African youth entrepreneurs and innovators driving local solutions.',
     overview: 'As part of its flagship Africa Youth Summit 5.0, YANGG hosted an insightful virtual event under the theme "AFRIPRENEUR and Young Innovators" on 12th September 2020.',
     objectives: [
@@ -233,7 +248,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'Celebrating Women\'s Achievements',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=500&fit=crop',
+    image: img8,
     shortDescription: 'Virtual dialogue celebrating women\'s contributions and fostering inclusive conversation on gender equity.',
     overview: 'In recognition of International Women\'s Day, YANGG hosted a powerful virtual dialogue on March 8th at 3:30 PM (GMT+1) via Zoom, bringing together youth leaders and advocates to celebrate women\'s achievements.',
     objectives: [
@@ -257,7 +272,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'Women & The African Identity',
-    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=500&fit=crop',
+    image: img9,
     shortDescription: 'She Leads Series dialogue amplifying women\'s voices on identity, leadership, and representation.',
     overview: 'YANGG hosted African Youth Summit 4.0 under the theme "Women & The African Identity" on August 28th, 2020. This She Leads Series event addressed systemic challenges women face regarding identity and leadership.',
     objectives: [
@@ -285,7 +300,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'She Leads...',
-    image: 'https://images.unsplash.com/photo-1591035897819-f4bdf739f446?w=800&h=500&fit=crop',
+    image: img10,
     shortDescription: 'Leadership summit amplifying women\'s leadership and governance across Africa and diaspora.',
     overview: 'YANGG hosted the African Leadership Summit 0.2 on July 3rd, 2020, under the theme "She Leads..." as part of the acclaimed She Leads Series dedicated to amplifying women\'s leadership.',
     objectives: [
@@ -310,7 +325,7 @@ export const eventsData = [
     status: 'completed',
     category: 'conference',
     theme: 'Youth Engagement for Global Action',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=500&fit=crop',
+    image: img11,
     shortDescription: 'YANGG Gambia summit amplifying youth voice in national development and global action.',
     overview: 'In commemoration of International Youth Day 2020, YANGG Gambia Chapter convened a high-level virtual summit on August 12, 2020, aimed at amplifying the voice of African youth in national development.',
     speakers: [
@@ -335,7 +350,7 @@ export const eventsData = [
     status: 'completed',
     category: 'workshop',
     theme: 'Advancing Social Change through SDG Implementation',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&h=500&fit=crop',
+    image: img12,
     shortDescription: 'Two-day workshop educating youth on practical SDG implementation and social change strategies.',
     overview: 'YANGG hosted a two-day virtual workshop designed to educate and engage young people on the practical implementation of the United Nations Sustainable Development Goals.',
     objectives: [
@@ -359,7 +374,7 @@ export const eventsData = [
     status: 'completed',
     category: 'training',
     theme: 'Leadership in Times of Crisis',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=500&fit=crop',
+    image: img13,
     shortDescription: 'Training session guiding youth through crisis leadership during COVID-19 pandemic.',
     overview: 'In response to the COVID-19 pandemic, YANGG organized a virtual leadership training on May 13th, 2020, titled "Leadership in Times of Crisis" to support young people through uncertain circumstances.',
     facilitator: 'Kelechi Ndieze – Youth Leader & International Speaker',
@@ -385,7 +400,7 @@ export const eventsData = [
     status: 'completed',
     category: 'campaign',
     theme: '#EndInfibulation_Africa',
-    image: 'https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=500&fit=crop',
+    image: img14,
     shortDescription: 'Five-month digital advocacy campaign against Female Genital Mutilation across Africa.',
     overview: 'YANGG launched a five-month continent-wide digital advocacy campaign titled "Online Campaign Against Infibulation Practices" to raise awareness and challenge harmful traditional practices.',
     partners: ['Circles for Advocacy', 'Team Illumination Africa'],
