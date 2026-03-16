@@ -9,6 +9,7 @@ import ServicesSection from '../components/ServicesSection'
 import ValuesSection from '../components/ValuesSection'
 import EventsSection from '../components/EventsSection'
 import GallerySection from '../components/GallerySection'
+import TeamSection from '../components/TeamSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import FAQSection from '../components/FAQSection'
 import NewsletterSection from '../components/NewsletterSection'
@@ -32,6 +33,7 @@ const HomePage = () => {
         <ValuesSection />
         <EventsSection />
         <GallerySection />
+        <TeamSection />
         <TestimonialsSection />
         <FAQSection />
         <NewsletterSection />

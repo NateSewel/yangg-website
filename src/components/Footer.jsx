@@ -4,6 +4,7 @@ import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/f
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useTranslation } from 'react-i18next'
+import logo from '../assets/logo.png'
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -92,11 +93,17 @@ const Footer = () => {
           >
             <motion.div 
               variants={fadeIn('down', 0.5)}
-              className="flex items-center gap-2 mb-6"
+              className="flex items-center gap-3 mb-6"
             >
-              <div className="w-4 h-4 bg-blue-600 rounded-full opacity-75"></div>
-              <div className="w-4 h-4 bg-green-500 rounded-full -ml-2"></div>
-              <span className="text-xl font-bold ml-1 text-gray-900 dark:text-white">YANGG</span>
+              <img src={logo} alt="YANGG Logo" className="h-12 w-auto" />
+              <div className="flex flex-col">
+                <span className="text-sm font-semibold text-[#f0c630] leading-tight tracking-wide">
+                  Young Africans Network
+                </span>
+                <span className="text-sm font-semibold text-[#f0c630] leading-tight tracking-wide">
+                  for Global Goals
+                </span>
+              </div>
             </motion.div>
             <motion.p 
               variants={fadeIn('up', 0.6)}
@@ -113,7 +120,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/yangg/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-700 dark:hover:bg-blue-600 hover:text-white transition-colors cursor-pointer"
+                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-[#32a8ed] dark:hover:bg-[#32a8ed] hover:text-white transition-colors cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn className="w-5 h-5" />
@@ -133,7 +140,7 @@ const Footer = () => {
                 href="https://www.facebook.com/share/1AxdZ9q8xH/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-blue-500 hover:text-white transition-colors cursor-pointer"
+                className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-[#32a8ed] dark:hover:bg-[#32a8ed] hover:text-white transition-colors cursor-pointer"
                 aria-label="Facebook"
               >
                 <FaFacebookF className="w-5 h-5" />

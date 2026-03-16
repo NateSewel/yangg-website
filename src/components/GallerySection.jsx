@@ -10,7 +10,7 @@ const GallerySection = () => {
   const [selectedImage, setSelectedImage] = useState(null)
   const [activeFilter, setActiveFilter] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
-  const [direction, setDirection] = useState(0) // Track slide direction
+  const [direction, setDirection] = useState(0)
   const itemsPerPage = 6
 
   const galleryItems = generateGalleryItems()
@@ -26,22 +26,19 @@ const GallerySection = () => {
     ? galleryItems 
     : galleryItems.filter(item => item.category === activeFilter)
 
-  // Calculate pagination
   const totalPages = Math.ceil(filteredItems.length / itemsPerPage)
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
   const currentItems = filteredItems.slice(startIndex, endIndex)
 
-  // Reset to page 1 when filter changes
   const handleFilterChange = (filterId) => {
     setActiveFilter(filterId)
     setCurrentPage(1)
   }
 
   const handlePrevPage = () => {
-    setDirection(-1) // Slide from left
+    setDirection(-1)
     setCurrentPage(prev => Math.max(prev - 1, 1))
-    // Smooth scroll to gallery section
     const gallerySection = document.querySelector('#gallery')
     if (gallerySection) {
       const offset = 80
@@ -54,9 +51,8 @@ const GallerySection = () => {
   }
 
   const handleNextPage = () => {
-    setDirection(1) // Slide from right
+    setDirection(1)
     setCurrentPage(prev => Math.min(prev + 1, totalPages))
-    // Smooth scroll to gallery section in webpage
     const gallerySection = document.querySelector('#gallery')
     if (gallerySection) {
       const offset = 80
@@ -66,10 +62,6 @@ const GallerySection = () => {
         behavior: 'smooth'
       })
     }
-  }
-
-  const handlePageClick = (pageNum) => {
-    setCurrentPage(pageNum)
   }
 
   return (
@@ -93,7 +85,6 @@ const GallerySection = () => {
           {t('gallery.subtitle')}
         </motion.p>
 
-        {/* Filter Buttons */}
         <motion.div 
           variants={fadeIn('up', 0.5)}
           className="flex flex-wrap justify-center gap-2 md:gap-3"
@@ -107,7 +98,7 @@ const GallerySection = () => {
               onClick={() => handleFilterChange(filter.id)}
               className={`px-4 md:px-6 py-1.5 md:py-2 rounded-full font-medium transition-all cursor-pointer text-sm md:text-base ${
                 activeFilter === filter.id
-                  ? 'bg-blue-600 dark:bg-blue-500 text-white shadow-lg'
+                  ? 'bg-[#32a8ed] dark:bg-[#32a8ed] text-white shadow-lg'
                   : 'bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
               }`}
             >
@@ -117,7 +108,6 @@ const GallerySection = () => {
         </motion.div>
       </motion.div>
 
-      {/* Gallery Grid */}
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div 
           key={currentPage}
@@ -154,14 +144,12 @@ const GallerySection = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Pagination Controls */}
       {totalPages > 1 && (
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="flex items-center justify-center gap-3 md:gap-4 mt-6 md:mt-8"
         >
-          {/* Previous Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -170,13 +158,12 @@ const GallerySection = () => {
             className={`p-2 md:p-3 rounded-lg transition-all ${
               currentPage === 1
                 ? 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
-                : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-600 cursor-pointer shadow-md'
+                : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-[#32a8ed]/10 dark:hover:bg-[#32a8ed]/20 cursor-pointer shadow-md'
             }`}
           >
             <HiChevronLeft className="w-6 h-6" />
           </motion.button>
 
-          {/* Next Button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -185,7 +172,7 @@ const GallerySection = () => {
             className={`p-2 md:p-3 rounded-lg transition-all ${
               currentPage === totalPages
                 ? 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500 cursor-not-allowed'
-                : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-600 cursor-pointer shadow-md'
+                : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-[#32a8ed]/10 dark:hover:bg-[#32a8ed]/20 cursor-pointer shadow-md'
             }`}
           >
             <HiChevronRight className="w-6 h-6" />
@@ -193,7 +180,6 @@ const GallerySection = () => {
         </motion.div>
       )}
 
-      {/* Page Info */}
       {totalPages > 1 && (
         <motion.p 
           initial={{ opacity: 0 }}
@@ -204,7 +190,6 @@ const GallerySection = () => {
         </motion.p>
       )}
 
-      {/* Lightbox Modal */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div

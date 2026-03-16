@@ -68,8 +68,8 @@ const ServicesSection = () => {
             variants={fadeIn('right', 0.7)}
             className="flex items-center gap-2"
           >
-            <div className="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></div>
+            <div className="w-5 h-5 rounded-full bg-[#32a8ed]/10 dark:bg-[#32a8ed]/20 flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#32a8ed] dark:bg-[#32a8ed]"></div>
             </div>
             <span className="text-gray-600 dark:text-gray-300">{t('programs.point1')}</span>
           </motion.div>
@@ -77,8 +77,8 @@ const ServicesSection = () => {
             variants={fadeIn('right', 0.8)}
             className="flex items-center gap-2"
           >
-            <div className="w-5 h-5 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center">
-              <div className="w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-indigo-400"></div>
+            <div className="w-5 h-5 rounded-full bg-[#32a8ed]/10 dark:bg-[#32a8ed]/20 flex items-center justify-center">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#32a8ed] dark:bg-[#32a8ed]"></div>
             </div>
             <span className="text-gray-600 dark:text-gray-300">{t('programs.point2')}</span>
           </motion.div>
@@ -87,7 +87,7 @@ const ServicesSection = () => {
           variants={fadeIn('up', 0.9)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-8 bg-indigo-600 dark:bg-indigo-500 text-white px-8 py-3 cursor-pointer rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors"
+          className="mt-8 bg-[#32a8ed] dark:bg-[#32a8ed] text-white px-8 py-3 cursor-pointer rounded-full hover:bg-[#2a8bc4] dark:hover:bg-[#2a8bc4] transition-colors"
         >
           {t('programs.button')}
         </motion.button>
@@ -103,7 +103,7 @@ const ServicesSection = () => {
             key={index}
             variants={fadeIn('up', 0.3 * (index + 1))}
             whileHover={{ scale: 1.05 }}
-            className="bg-white dark:bg-gray-900 max-w-72 cursor-pointer rounded-2xl p-6 hover:shadow-xl transition-shadow duration-300 border border-transparent dark:border-gray-700"
+            className="bg-white dark:bg-gray-900 max-w-72 cursor-pointer rounded-2xl p-6 hover:shadow-xl transition-shadow duration-300 border-2 border-[#f0c630] dark:border-[#f0c630]"
           >
             <motion.div 
               variants={fadeIn('down', 0.4 * (index + 1))}
@@ -126,7 +126,7 @@ const ServicesSection = () => {
             <motion.a 
               variants={fadeIn('up', 0.6 * (index + 1))}
               href={service.link}
-              className="text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-700 dark:hover:text-indigo-300 transition-colors"
+              className="text-[#32a8ed] dark:text-[#32a8ed] font-medium hover:text-[#2a8bc4] dark:hover:text-[#2a8bc4] transition-colors"
             >
               {t('programs.learnMore')}
             </motion.a>

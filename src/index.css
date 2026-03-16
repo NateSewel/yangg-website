@@ -2,6 +2,11 @@
 
 @variant dark (&:where(.dark, .dark *));
 
+:root {
+  --primary: #f0c630;
+  --secondary: #32a8ed;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;

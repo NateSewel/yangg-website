@@ -76,7 +76,7 @@ const EventsPage = () => {
               onClick={() => handleFilterChange(category)}
               className={`px-4 md:px-6 py-2 md:py-2.5 rounded-full font-medium transition-all cursor-pointer text-sm md:text-base font-['Montserrat'] ${
                 filter === category
-                  ? 'bg-blue-600 text-white shadow-lg'
+                  ? 'bg-[#32a8ed] text-white shadow-lg'
                   : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
             >
@@ -106,7 +106,7 @@ const EventsPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden group"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all overflow-hidden group border-2 border-[#f0c630] dark:border-[#f0c630]"
             >
               {/* Event Image */}
               {event.image && (
@@ -182,7 +182,7 @@ const EventsPage = () => {
                 className={`p-1.5 md:p-2 rounded-lg transition-colors ${
                   currentPage === 1
                     ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700 cursor-pointer'
+                    : 'bg-[#32a8ed] text-white hover:bg-[#2a8bc4] cursor-pointer'
                 }`}
               >
                 <FaChevronLeft />
@@ -194,7 +194,7 @@ const EventsPage = () => {
                   onClick={() => handlePageChange(index + 1)}
                   className={`w-8 h-8 md:w-10 md:h-10 rounded-lg font-medium transition-colors cursor-pointer text-sm md:text-base ${
                     currentPage === index + 1
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-[#32a8ed] text-white'
                       : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                   }`}
                 >
@@ -208,7 +208,7 @@ const EventsPage = () => {
                 className={`p-1.5 md:p-2 rounded-lg transition-colors ${
                   currentPage === totalPages
                     ? 'bg-gray-100 dark:bg-gray-800 text-gray-400 cursor-not-allowed'
-                    : 'bg-blue-600 text-white hover:bg-blue-700 cursor-pointer'
+                    : 'bg-[#32a8ed] text-white hover:bg-[#2a8bc4] cursor-pointer'
                 }`}
               >
                 <FaChevronRight />

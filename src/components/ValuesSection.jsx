@@ -80,7 +80,7 @@ const ValuesSection = () => {
           <motion.div 
             key={index}
             variants={fadeIn('up', 0.2 * (index + 1))}
-            className="p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800"
+            className="p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 bg-white dark:bg-gray-800 border-2 border-[#f0c630] dark:border-[#f0c630]"
           >
             <motion.div 
               variants={fadeIn('down', 0.3 * (index + 1))}

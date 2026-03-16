@@ -106,7 +106,7 @@ const EventsSection = () => {
             onClick={() => handleFilterChange(category)}
             className={`px-6 py-2.5 rounded-full font-medium transition-all cursor-pointer font-['Montserrat'] ${
               filter === category
-                ? 'bg-blue-600 text-white shadow-lg'
+                ? 'bg-[#32a8ed] text-white shadow-lg'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
             }`}
           >
@@ -140,7 +140,7 @@ const EventsSection = () => {
               exit={{ opacity: 0, scale: 0.8 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
               whileHover={{ scale: 1.03, y: -5 }}
-              className={`bg-gradient-to-br ${getCardColor(event.category)} dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent dark:border-gray-600`}
+              className={`bg-gradient-to-br ${getCardColor(event.category)} dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 shadow-md hover:shadow-xl transition-all cursor-pointer border-2 border-[#f0c630] dark:border-[#f0c630]`}
             >
               <div className="flex justify-between items-start mb-4">
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(event.status)} font-['Montserrat']`}>
@@ -270,7 +270,7 @@ const EventsSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 dark:bg-blue-500 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 dark:hover:bg-blue-600 transition-colors shadow-lg cursor-pointer"
+            className="bg-[#32a8ed] dark:bg-[#32a8ed] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#2a8bc4] dark:hover:bg-[#2a8bc4] transition-colors shadow-lg cursor-pointer"
           >
             View All Events & Programs
           </motion.button>

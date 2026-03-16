@@ -90,10 +90,10 @@ const ContactSection = () => {
               href={info.link}
               variants={fadeIn('up', 0.2 * (index + 1))}
               whileHover={{ scale: 1.03, y: -5 }}
-              className="block bg-white dark:bg-gray-900 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer border border-transparent dark:border-gray-700"
+              className="block bg-white dark:bg-gray-900 p-4 md:p-6 rounded-2xl shadow-md hover:shadow-xl transition-all cursor-pointer border-2 border-[#f0c630] dark:border-[#f0c630]"
             >
               <div className="flex items-start gap-3 md:gap-4">
-                <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400">
+                <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center rounded-lg bg-[#32a8ed]/10 dark:bg-[#32a8ed]/20 text-[#32a8ed] dark:text-[#32a8ed]">
                   {info.icon}
                 </div>
                 <div className="flex-1">
@@ -111,7 +111,7 @@ const ContactSection = () => {
           {/* Additional Info */}
           <motion.div
             variants={fadeIn('up', 0.8)}
-            className="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 p-4 md:p-6 rounded-2xl border border-blue-100 dark:border-blue-800"
+            className="bg-gradient-to-br from-[#32a8ed]/10 to-[#f0c630]/10 dark:from-[#32a8ed]/20 dark:to-[#f0c630]/20 p-4 md:p-6 rounded-2xl border border-[#32a8ed]/30 dark:border-[#32a8ed]/50"
           >
             <h3 className="text-base md:text-lg font-semibold text-gray-900 dark:text-white mb-2">
               Office Hours
@@ -132,7 +132,7 @@ const ContactSection = () => {
           <motion.form 
             variants={fadeIn('up', 0.4)}
             onSubmit={handleSubmit}
-            className="bg-white dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-2xl shadow-md border border-transparent dark:border-gray-700"
+            className="bg-white dark:bg-gray-900 p-4 sm:p-6 md:p-8 rounded-2xl shadow-md border-2 border-[#f0c630] dark:border-[#f0c630]"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
               {/* Name Input */}
@@ -151,7 +151,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all text-sm md:text-base"
+                    className="w-full pl-10 pr-4 py-2.5 md:py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-[#32a8ed] dark:focus:border-[#32a8ed] focus:ring-2 focus:ring-[#32a8ed]/20 dark:focus:ring-[#32a8ed]/20 transition-all text-sm md:text-base"
                     placeholder="John Doe"
                   />
                 </div>
@@ -173,7 +173,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-[#32a8ed] dark:focus:border-[#32a8ed] focus:ring-2 focus:ring-[#32a8ed]/20 dark:focus:ring-[#32a8ed]/20 transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -196,7 +196,7 @@ const ContactSection = () => {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-[#32a8ed] dark:focus:border-[#32a8ed] focus:ring-2 focus:ring-[#32a8ed]/20 dark:focus:ring-[#32a8ed]/20 transition-all"
                     placeholder="+234 XXX XXX XXXX"
                   />
                 </div>
@@ -218,7 +218,7 @@ const ContactSection = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all"
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-[#32a8ed] dark:focus:border-[#32a8ed] focus:ring-2 focus:ring-[#32a8ed]/20 dark:focus:ring-[#32a8ed]/20 transition-all"
                     placeholder="How can we help?"
                   />
                 </div>
@@ -237,7 +237,7 @@ const ContactSection = () => {
                 onChange={handleChange}
                 required
                 rows="6"
-                className="w-full px-4 py-2.5 md:py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-blue-600 dark:focus:border-blue-400 focus:ring-2 focus:ring-blue-100 dark:focus:ring-blue-900 transition-all resize-none text-sm md:text-base"
+                className="w-full px-4 py-2.5 md:py-3 border border-gray-200 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100 rounded-xl focus:outline-none focus:border-[#32a8ed] dark:focus:border-[#32a8ed] focus:ring-2 focus:ring-[#32a8ed]/20 dark:focus:ring-[#32a8ed]/20 transition-all resize-none text-sm md:text-base"
                 placeholder="Tell us more about your inquiry..."
               ></textarea>
             </motion.div>
@@ -248,7 +248,7 @@ const ContactSection = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-blue-600 dark:bg-blue-500 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-blue-700 dark:hover:bg-blue-600 cursor-pointer transition-all hover:shadow-lg hover:shadow-blue-100 dark:hover:shadow-blue-900/50 font-medium text-base md:text-lg"
+              className="w-full bg-[#32a8ed] dark:bg-[#32a8ed] text-white px-6 md:px-8 py-3 md:py-4 rounded-xl hover:bg-[#2a8bc4] dark:hover:bg-[#2a8bc4] cursor-pointer transition-all hover:shadow-lg hover:shadow-[#32a8ed]/30 dark:hover:shadow-[#32a8ed]/30 font-medium text-base md:text-lg"
             >
               Send Message
             </motion.button>

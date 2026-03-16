@@ -6,42 +6,48 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import { FaStar } from 'react-icons/fa';
 import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
+import aminaImage from '../assets/testimonials/amina-okafor.jpg';
+import fatouImage from '../assets/testimonials/fatou-jalo.jpg';
+import wanjiruImage from '../assets/testimonials/wanjiru.jpg';
+import chidiImage from '../assets/testimonials/chidi.jpg';
+import kwameImage from '../assets/testimonials/kwamme.jpg';
+import mariamaImage from '../assets/testimonials/mariama.jpg';
 
 const testimonials = [
   {
     id: 1,
     name: "Amina Okafor", 
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: aminaImage,
     text: "YANGG has transformed my understanding of what it means to be a young African leader. The Leadership Academy gave me the skills and confidence to start my own social enterprise.",
   },
   {
     id: 2,
     name: "Fatou Jallow",
-    image: "https://randomuser.me/api/portraits/women/68.jpg", 
+    image: fatouImage, 
     text: "Through the She Leads program, I found a community of powerful women who inspired me to run for local office. Today, I'm representing my community and making real change.",
   },
   {
     id: 3,
     name: "Kwame Mensah",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
+    image: kwameImage,
     text: "The Africa The Future Conference opened my eyes to the possibilities of digital innovation. I met mentors and partners who helped me scale my tech startup across three countries.",
   },
   {
     id: 4,
     name: "Wanjiru Kamau",
-    image: "https://randomuser.me/api/portraits/women/29.jpg",
+    image: wanjiruImage,
     text: "YANGG's SDG training program equipped me with practical tools to implement sustainable development projects in my community. We've impacted over 500 families so far.",
   },
   {
     id: 5,
     name: "Chidi Okonkwo",
-    image: "https://randomuser.me/api/portraits/men/33.jpg",
+    image: chidiImage,
     text: "The Afripreneur program didn't just teach me business skills—it changed my mindset. I now see challenges as opportunities to create homegrown African solutions.",
   },
   {
     id: 6,
     name: "Mariama Diallo",
-    image: "https://randomuser.me/api/portraits/women/71.jpg",
+    image: mariamaImage,
     text: "Being part of YANGG's civic engagement initiatives has empowered me to advocate for youth-friendly policies in my country. Our voices are finally being heard.",
   },
 
@@ -96,7 +102,7 @@ const TestimonialsSection = () => {
             <SwiperSlide key={testimonial.id} className='h-full md:py-12 py-4'>
               <motion.div 
                 variants={fadeIn('up', 0.3 * (index + 1))}
-                className="text-center bg-white p-4 rounded-lg shadow-md h-full flex flex-col"
+                className="text-center bg-white dark:bg-gray-800 p-4 rounded-lg shadow-md h-full flex flex-col border-2 border-[#f0c630] dark:border-[#f0c630]"
               >
                 <motion.div 
                   variants={fadeIn('down', 0.4 * (index + 1))}
@@ -130,7 +136,7 @@ const TestimonialsSection = () => {
                 </motion.h3>
                 <motion.p 
                   variants={fadeIn('up', 0.6 * (index + 1))}
-                  className="text-gray-600"
+                  className="text-gray-600 dark:text-gray-300"
                 >
                   {testimonial.text}
                 </motion.p>
@@ -148,7 +154,7 @@ const TestimonialsSection = () => {
             variants={fadeIn('right', 0.8)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="swiper-button-prev-custom w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white cursor-pointer transition-colors"
+            className="swiper-button-prev-custom w-12 h-12 rounded-full border border-gray-200 dark:border-gray-600 flex items-center justify-center hover:bg-[#32a8ed] hover:text-white cursor-pointer transition-colors text-gray-700 dark:text-gray-300"
           >
             <BsChevronLeft className="w-6 h-6" />
           </motion.button>
@@ -156,7 +162,7 @@ const TestimonialsSection = () => {
             variants={fadeIn('left', 0.8)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="swiper-button-next-custom w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center hover:bg-blue-500 hover:text-white cursor-pointer transition-colors"
+            className="swiper-button-next-custom w-12 h-12 rounded-full border border-gray-200 dark:border-gray-600 flex items-center justify-center hover:bg-[#32a8ed] hover:text-white cursor-pointer transition-colors text-gray-700 dark:text-gray-300"
           >
             <BsChevronRight className="w-6 h-6" />
           </motion.button>

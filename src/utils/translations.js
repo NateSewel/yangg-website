@@ -13,9 +13,9 @@ export const translations = {
     // Hero Section
     hero: {
       badge: "Empowering African Youth",
-      title: "Transforming Africa Through",
-      titleHighlight: "Youth Leadership",
-      titleEnd: "and Innovation",
+      title: "Making Africa",
+      titleHighlight: "The Tree of Life",
+      titleEnd: "",
       description: "We empower young Africans to become producers, not just consumers—building homegrown solutions that drive digital transformation and sustainable development across the continent.",
       emailPlaceholder: "Email address"
     },
@@ -38,7 +38,7 @@ export const translations = {
       feature2Desc: "Comprehensive training programs that develop leadership and innovation skills",
       feature3Title: "Drive Impact",
       feature3Desc: "Empowered youth create sustainable solutions for their communities",
-      button: "Join Our Programs"
+      button: "Learn About Us"
     },
     // Schedule Section
     schedule: {
@@ -60,7 +60,7 @@ export const translations = {
       subtitle: "Comprehensive initiatives designed to empower the next generation of African leaders",
       point1: "Leadership development & capacity building",
       point2: "Entrepreneurship & innovation support",
-      button: "Explore Programs",
+      button: "Learn About Us",
       program1Title: "Leadership Academy",
       program1Desc: "Comprehensive training program equipping young Africans with leadership skills and strategic thinking.",
       program2Title: "Afripreneur",
@@ -172,7 +172,7 @@ export const translations = {
       feature2Desc: "Programmes de formation complets qui développent le leadership et les compétences en innovation",
       feature3Title: "Générer l'Impact",
       feature3Desc: "Les jeunes autonomisés créent des solutions durables pour leurs communautés",
-      button: "Rejoindre Nos Programmes"
+      button: "En Savoir Plus Sur Nous"
     },
     // Schedule Section
     schedule: {
@@ -194,7 +194,7 @@ export const translations = {
       subtitle: "Initiatives complètes conçues pour autonomiser la prochaine génération de leaders africains",
       point1: "Développement du leadership et renforcement des capacités",
       point2: "Soutien à l'entrepreneuriat et à l'innovation",
-      button: "Explorer les Programmes",
+      button: "En Savoir Plus Sur Nous",
       program1Title: "Académie de Leadership",
       program1Desc: "Programme de formation complet équipant les jeunes Africains de compétences en leadership et en pensée stratégique.",
       program2Title: "Afripreneur",
@@ -306,7 +306,7 @@ export const translations = {
       feature2Desc: "Programas de capacitación integral que desarrollan habilidades de liderazgo e innovación",
       feature3Title: "Generar Impacto",
       feature3Desc: "Los jóvenes empoderados crean soluciones sostenibles para sus comunidades",
-      button: "Únete a Nuestros Programas"
+      button: "Conócenos"
     },
     // Schedule Section
     schedule: {
@@ -328,7 +328,7 @@ export const translations = {
       subtitle: "Iniciativas integrales diseñadas para empoderar a la próxima generación de líderes africanos",
       point1: "Desarrollo de liderazgo y fortalecimiento de capacidades",
       point2: "Apoyo al emprendimiento e innovación",
-      button: "Explorar Programas",
+      button: "Conócenos",
       program1Title: "Academia de Liderazgo",
       program1Desc: "Programa de capacitación integral que equipa a los jóvenes africanos con habilidades de liderazgo y pensamiento estratégico.",
       program2Title: "Afripreneur",

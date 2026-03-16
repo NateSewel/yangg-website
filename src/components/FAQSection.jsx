@@ -59,7 +59,7 @@ const FAQSection = () => {
           <motion.div 
             key={index}
             variants={fadeIn('up', 0.1 * (index + 1))}
-            className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+            className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow border-2 border-[#f0c630]"
           >
             <button
               onClick={() => toggleFAQ(index)}

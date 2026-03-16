@@ -6,6 +6,7 @@ import { fadeIn} from "../utils/motion";
 import { useTheme } from '../context/ThemeContext'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
+import logo from '../assets/logo.png'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -21,6 +22,7 @@ const Navbar = () => {
     { href: "#programs", label: t('nav.programs'), route: '/' },
     { href: "#events", label: t('nav.events'), route: '/' },
     { href: "#gallery", label: t('nav.gallery'), route: '/' },
+    { href: "#team", label: t('nav.team'), route: '/' },
     { href: "#testimonials", label: t('nav.testimonials'), route: '/' },
   ]
 
@@ -94,20 +96,21 @@ const Navbar = () => {
         {/* Logo */}
         <motion.div 
           variants={fadeIn('right', 0.3)}
-          className="flex items-center gap-2 cursor-pointer"
+          className="flex items-center gap-3 cursor-pointer"
           onClick={() => {
             navigate('/')
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
-          <motion.div 
-            whileHover={{ scale: 1.1 }}
-            className="flex items-center gap-1"
-          >
-            <div className="w-4 h-4 bg-blue-600 rounded-full opacity-75 hover:opacity-100 transition-opacity"></div>
-            <div className="w-4 h-4 bg-green-500 rounded-full -ml-2 hover:opacity-75 transition-opacity"></div>
-          </motion.div>
-          <span className="text-xl font-bold text-gray-900 dark:text-white">YANGG</span>
+          <img src={logo} alt="YANGG Logo" className="h-10 w-auto" />
+          <div className="hidden md:flex flex-col">
+            <span className="text-xs font-semibold text-[#f0c630] leading-tight tracking-wide">
+              Young Africans Network
+            </span>
+            <span className="text-xs font-semibold text-[#f0c630] leading-tight tracking-wide">
+              for Global Goals
+            </span>
+          </div>
         </motion.div>
 
         {/* Navigation Links - Desktop */}
@@ -121,8 +124,8 @@ const Navbar = () => {
               variants={fadeIn('down', 0.1 * (index + 1))}
               href={link.href}
               onClick={(e) => handleNavClick(e, link)}
-              className={`text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all cursor-pointer
-                ${activeLink === link.href ? 'text-blue-600 after:w-full  ' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
+              className={`text-sm font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-[#32a8ed] after:transition-all cursor-pointer
+                ${activeLink === link.href ? 'text-[#32a8ed] after:w-full  ' : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white'}`}
             >
               {link.label}
             </motion.a>
@@ -138,7 +141,7 @@ const Navbar = () => {
             variants={fadeIn('left', 0.3)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="hidden md:block bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-100 cursor-pointer"
+            className="hidden md:block bg-[#32a8ed] text-white px-6 py-2.5 rounded-lg hover:bg-[#2a8bc4] text-sm font-medium transition-all hover:shadow-lg hover:shadow-[#32a8ed]/30 cursor-pointer"
           >
             {t('nav.getInTouch')}
           </motion.a>
@@ -209,7 +212,7 @@ const Navbar = () => {
               variants={fadeIn('up', 0.4)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full bg-blue-600 text-white px-6 py-2.5 rounded-lg hover:bg-blue-700 text-sm font-medium transition-all hover:shadow-lg hover:shadow-blue-100 cursor-pointer text-center block"
+              className="w-full bg-[#32a8ed] text-white px-6 py-2.5 rounded-lg hover:bg-[#2a8bc4] text-sm font-medium transition-all hover:shadow-lg hover:shadow-[#32a8ed]/30 cursor-pointer text-center block"
             >
               {t('nav.getInTouch')}
             </motion.a>

@@ -19,7 +19,7 @@ const EventDetailPage = () => {
       <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Event Not Found</h1>
-          <Link to="/events" className="text-blue-600 dark:text-blue-400 hover:underline">
+          <Link to="/events" className="text-[#32a8ed] dark:text-[#32a8ed] hover:underline">
             Back to Events
           </Link>
         </div>
@@ -44,7 +44,7 @@ const EventDetailPage = () => {
           initial="hidden"
           whileInView="show"
           onClick={() => navigate('/events')}
-          className="flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:gap-3 transition-all mb-6 md:mb-8 cursor-pointer font-['Montserrat']"
+          className="flex items-center gap-2 text-[#32a8ed] dark:text-[#32a8ed] hover:gap-3 transition-all mb-6 md:mb-8 cursor-pointer font-['Montserrat']"
         >
           <FaArrowLeft />
           <span>Back to Events</span>
@@ -90,7 +90,7 @@ const EventDetailPage = () => {
 
           <motion.p
             variants={fadeIn('up', 0.5)}
-            className="text-lg sm:text-xl text-blue-600 dark:text-blue-400 font-semibold mb-4 md:mb-6 font-['Montserrat']"
+            className="text-lg sm:text-xl text-[#32a8ed] dark:text-[#32a8ed] font-semibold mb-4 md:mb-6 font-['Montserrat']"
           >
             {event.theme}
           </motion.p>
@@ -100,7 +100,7 @@ const EventDetailPage = () => {
             className="flex flex-wrap gap-6 text-gray-600 dark:text-gray-300 font-['Montserrat']"
           >
             <div className="flex items-center gap-2">
-              <FaCalendar className="text-blue-600 dark:text-blue-400" />
+              <FaCalendar className="text-[#32a8ed] dark:text-[#32a8ed]" />
               <span>{event.date}</span>
             </div>
             <div className="flex items-center gap-2">
@@ -132,7 +132,7 @@ const EventDetailPage = () => {
             className="mb-8 md:mb-12"
           >
             <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-              <FaBullseye className="text-blue-600 dark:text-blue-400 text-xl md:text-2xl" />
+              <FaBullseye className="text-[#32a8ed] dark:text-[#32a8ed] text-xl md:text-2xl" />
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white font-['Montserrat']">Objectives</h2>
             </div>
             <ul className="space-y-2 md:space-y-3">
@@ -142,7 +142,7 @@ const EventDetailPage = () => {
                   variants={fadeIn('right', 0.1 * index)}
                   className="flex items-start gap-2 md:gap-3 text-gray-600 dark:text-gray-300 text-sm sm:text-base font-['Montserrat']"
                 >
-                  <span className="text-blue-600 dark:text-blue-400 mt-1">•</span>
+                  <span className="text-[#32a8ed] dark:text-[#32a8ed] mt-1">•</span>
                   <span>{objective}</span>
                 </motion.li>
               ))}
@@ -169,7 +169,7 @@ const EventDetailPage = () => {
                 <motion.div
                   key={index}
                   variants={fadeIn('up', 0.1 * index)}
-                  className="p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow"
+                  className="p-3 md:p-4 rounded-lg bg-gray-50 dark:bg-gray-800 hover:shadow-md transition-shadow border-2 border-[#f0c630] dark:border-[#f0c630]"
                 >
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm sm:text-base font-['Montserrat']">
                     {speaker.name}
@@ -180,7 +180,7 @@ const EventDetailPage = () => {
                     </p>
                   )}
                   {speaker.country && (
-                    <p className="text-sm text-blue-600 dark:text-blue-400 font-['Montserrat']">
+                    <p className="text-sm text-[#32a8ed] dark:text-[#32a8ed] font-['Montserrat']">
                       {speaker.country}
                     </p>
                   )}
@@ -209,7 +209,7 @@ const EventDetailPage = () => {
                 <motion.div
                   key={index}
                   variants={fadeIn('up', 0.1 * index)}
-                  className="p-4 rounded-lg bg-gray-50 dark:bg-gray-800"
+                  className="p-4 rounded-lg bg-gray-50 dark:bg-gray-800 border-2 border-[#f0c630] dark:border-[#f0c630]"
                 >
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-2 font-['Montserrat']">
                     {item.topic}
@@ -282,7 +282,7 @@ const EventDetailPage = () => {
             whileInView="show"
             className="mb-8 md:mb-12"
           >
-            <div className="p-4 md:p-6 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800">
+            <div className="p-4 md:p-6 rounded-xl bg-[#32a8ed]/10 dark:bg-[#32a8ed]/20 border border-[#32a8ed]/30 dark:border-[#32a8ed]/50">
               <h3 className="text-base sm:text-lg font-semibold text-gray-900 dark:text-white mb-2 font-['Montserrat']">
                 Participation
               </h3>
@@ -317,7 +317,7 @@ const EventDetailPage = () => {
         >
           <button
             onClick={() => navigate('/events')}
-            className="bg-blue-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer text-sm sm:text-base font-['Montserrat']"
+            className="bg-[#32a8ed] text-white px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-[#2a8bc4] transition-colors cursor-pointer text-sm sm:text-base font-['Montserrat']"
           >
             View All Events
           </button>

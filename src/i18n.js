@@ -10,6 +10,7 @@ const resources = {
       "nav.programs": "Programs",
       "nav.events": "Events",
       "nav.gallery": "Gallery",
+      "nav.team": "Team",
       "nav.testimonials": "Testimonials",
       "nav.getInTouch": "Get in touch",
       
@@ -38,7 +39,7 @@ const resources = {
       "features.feature2Desc": "Comprehensive training programs that develop leadership and innovation skills",
       "features.feature3Title": "Drive Impact",
       "features.feature3Desc": "Empowered youth create sustainable solutions for their communities",
-      "features.button": "Join Our Programs",
+      "features.button": "Learn About Us",
       
       // Schedule Section
       "schedule.tag": "OUR IMPACT",
@@ -83,6 +84,11 @@ const resources = {
       "gallery.filterConferences": "Conferences",
       "gallery.filterTraining": "Training",
       "gallery.filterWorkshops": "Workshops",
+      
+      // Team Section
+      "team.title": "Our Leadership Structure",
+      "team.subtitle": "Meet the dedicated leaders driving our mission to empower African youth and transform communities across the continent.",
+      "team.button": "Meet Board Members",
       
       // Testimonials Section
       "testimonials.title": "Stories from Our Community",
@@ -154,6 +160,38 @@ const resources = {
       "faq.q10": "How can I support YANGG's work?",
       "faq.a10": "You can support YANGG by partnering with us, volunteering, sponsoring projects, or donating to our initiatives to further youth development and community transformation.",
       
+      // About Page
+      "aboutPage.title": "About",
+      "aboutPage.subtitle": "Young Africans Network for Global Goals",
+      "aboutPage.description1": "YANGG is a conglomerate of young and vibrant African youths who are zealous and passionate towards contributing their quota in the development of their society with relation to the sustainable development goals, business development/entrepreneurship and leadership development.",
+      "aboutPage.description2": "It is a network of compelling and passionate young Africans and rising future pioneers attempting to make change and create better systems in Africa through realizing the global goals and networks that aim at reinforcing connections between young advocates of change through energized coordinated efforts.",
+      "aboutPage.memberCountriesTitle": "Our",
+      "aboutPage.memberCountriesHighlight": "Member Countries",
+      "aboutPage.philosophyTitle": "Our",
+      "aboutPage.philosophyHighlight": "Philosophy",
+      "aboutPage.philosophy1Title": "Goal-Oriented",
+      "aboutPage.philosophy1Desc": "YANGG is intent on achieving her three primary objectives in leadership development, business development/entrepreneurship, and SDGs.",
+      "aboutPage.philosophy2Title": "Inclusiveness",
+      "aboutPage.philosophy2Desc": "We want to make our continent hospitable to both the rich and the poor, black and white, young and old, strong and weak, and, most importantly, the impaired.",
+      "aboutPage.philosophy3Title": "Developing African Potential",
+      "aboutPage.philosophy3Desc": "Youth dynamism and assertiveness for tomorrow's world. Africa is endowed with a wealth of talent, which must be fully utilized if she is to meet her goals. YANGG is committed to maximizing the potential of African youths through encouragement and promotion.",
+      "aboutPage.philosophy4Title": "Champion African Growth",
+      "aboutPage.philosophy4Desc": "YANGG would like to see African youths at the forefront, ready to work for our continent's betterment. We anticipate that the youth will recognize that they are the solutions to their concerns and problems.",
+      "aboutPage.philosophy5Title": "Collaboration/Partnership",
+      "aboutPage.philosophy5Desc": "In the cause of our work, we look forward to join force with necessary stakeholders, government agencies, key individuals and corporate institutions for the actualization of our work.",
+      "aboutPage.valuesTitle": "Our",
+      "aboutPage.valuesHighlight": "Values",
+      "aboutPage.value1Title": "Partnership",
+      "aboutPage.value1Desc": "Knowing that no ocean ever produce its own water, like seas and rivers that join up to form the ocean, YANGG could not be indifferent and for that reason she will partner with other organizations who buy her dream of making Africa tree of life.",
+      "aboutPage.value2Title": "Integrity",
+      "aboutPage.value2Desc": "Human integrity is not a debatable fact, and as a human on planet earth all humans need to be given due respect. Humanity is our most charitable religion. For Africa to be at peace we all must uphold human integrity.",
+      "aboutPage.value3Title": "Innovation",
+      "aboutPage.value3Desc": "We wish to make our continent a beautiful jewel. For this reason, YANGG wishes to encourage the young Africans to be innovative.",
+      "aboutPage.value4Title": "Pan-Africanism",
+      "aboutPage.value4Desc": "We seek to uphold the dreams of our famous leaders like late President Muammar Gaddafi, of a strong and united Africa, one with no disparity in race, sex, religion nor color.",
+      "aboutPage.value5Title": "Teamwork",
+      "aboutPage.value5Desc": "Like our locals will commonly say 'one hand can never tie a bundle', YANGG on her part is out to build a strong bond between our African youths by encouraging teamwork.",
+      
       // Footer
       "footer.description": "Young African Network for Global Goals - Empowering African youth to shape the future through leadership, innovation, and civic engagement.",
       "footer.company": "Company",
@@ -172,6 +210,7 @@ const resources = {
       "nav.programs": "Programmes",
       "nav.events": "Événements",
       "nav.gallery": "Galerie",
+      "nav.team": "Équipe",
       "nav.testimonials": "Témoignages",
       "nav.getInTouch": "Contactez-nous",
       
@@ -200,7 +239,7 @@ const resources = {
       "features.feature2Desc": "Programmes de formation complets qui développent le leadership et les compétences en innovation",
       "features.feature3Title": "Générer l'Impact",
       "features.feature3Desc": "Les jeunes autonomisés créent des solutions durables pour leurs communautés",
-      "features.button": "Rejoindre Nos Programmes",
+      "features.button": "En Savoir Plus Sur Nous",
       
       // Schedule Section
       "schedule.tag": "NOTRE IMPACT",
@@ -245,6 +284,11 @@ const resources = {
       "gallery.filterConferences": "Conférences",
       "gallery.filterTraining": "Formation",
       "gallery.filterWorkshops": "Ateliers",
+      
+      // Team Section
+      "team.title": "Notre Structure de Leadership",
+      "team.subtitle": "Rencontrez les leaders dévoués qui conduisent notre mission d'autonomiser la jeunesse africaine et de transformer les communautés à travers le continent.",
+      "team.button": "Rencontrer les Membres du Conseil",
       
       // Testimonials Section
       "testimonials.title": "Histoires de Notre Communauté",
@@ -316,6 +360,38 @@ const resources = {
       "faq.q10": "Comment puis-je soutenir le travail de YANGG?",
       "faq.a10": "Vous pouvez soutenir YANGG en vous associant avec nous, en faisant du bénévolat, en parrainant des projets ou en faisant un don à nos initiatives pour favoriser le développement des jeunes et la transformation communautaire.",
       
+      // About Page
+      "aboutPage.title": "À Propos",
+      "aboutPage.subtitle": "Réseau des Jeunes Africains pour les Objectifs Mondiaux",
+      "aboutPage.description1": "YANGG est un conglomérat de jeunes Africains dynamiques et passionnés qui contribuent au développement de leur société en relation avec les objectifs de développement durable, le développement des affaires/entrepreneuriat et le développement du leadership.",
+      "aboutPage.description2": "C'est un réseau de jeunes Africains passionnés et de futurs pionniers qui tentent de créer le changement et de créer de meilleurs systèmes en Afrique en réalisant les objectifs mondiaux et les réseaux qui visent à renforcer les connexions entre les jeunes défenseurs du changement.",
+      "aboutPage.memberCountriesTitle": "Nos",
+      "aboutPage.memberCountriesHighlight": "Pays Membres",
+      "aboutPage.philosophyTitle": "Notre",
+      "aboutPage.philosophyHighlight": "Philosophie",
+      "aboutPage.philosophy1Title": "Orienté vers les Objectifs",
+      "aboutPage.philosophy1Desc": "YANGG est déterminé à atteindre ses trois objectifs principaux en matière de développement du leadership, de développement des affaires/entrepreneuriat et d'ODD.",
+      "aboutPage.philosophy2Title": "Inclusivité",
+      "aboutPage.philosophy2Desc": "Nous voulons rendre notre continent hospitalier pour les riches et les pauvres, les noirs et les blancs, les jeunes et les vieux, les forts et les faibles, et surtout les personnes handicapées.",
+      "aboutPage.philosophy3Title": "Développer le Potentiel Africain",
+      "aboutPage.philosophy3Desc": "Dynamisme et affirmation de la jeunesse pour le monde de demain. L'Afrique est dotée d'une richesse de talents qui doit être pleinement utilisée pour atteindre ses objectifs. YANGG s'engage à maximiser le potentiel des jeunes Africains.",
+      "aboutPage.philosophy4Title": "Champion de la Croissance Africaine",
+      "aboutPage.philosophy4Desc": "YANGG aimerait voir les jeunes Africains à l'avant-garde, prêts à travailler pour l'amélioration de notre continent. Nous anticipons que les jeunes reconnaîtront qu'ils sont les solutions à leurs préoccupations et problèmes.",
+      "aboutPage.philosophy5Title": "Collaboration/Partenariat",
+      "aboutPage.philosophy5Desc": "Dans le cadre de notre travail, nous souhaitons unir nos forces avec les parties prenantes nécessaires, les agences gouvernementales, les individus clés et les institutions corporatives.",
+      "aboutPage.valuesTitle": "Nos",
+      "aboutPage.valuesHighlight": "Valeurs",
+      "aboutPage.value1Title": "Partenariat",
+      "aboutPage.value1Desc": "Sachant qu'aucun océan ne produit sa propre eau, comme les mers et les rivières qui se rejoignent pour former l'océan, YANGG ne pouvait pas être indifférent et pour cette raison, elle s'associera avec d'autres organisations qui partagent son rêve.",
+      "aboutPage.value2Title": "Intégrité",
+      "aboutPage.value2Desc": "L'intégrité humaine n'est pas un fait discutable, et en tant qu'humain sur la planète terre, tous les humains doivent recevoir le respect qui leur est dû. L'humanité est notre religion la plus charitable.",
+      "aboutPage.value3Title": "Innovation",
+      "aboutPage.value3Desc": "Nous souhaitons faire de notre continent un beau joyau. Pour cette raison, YANGG souhaite encourager les jeunes Africains à être innovants.",
+      "aboutPage.value4Title": "Panafricanisme",
+      "aboutPage.value4Desc": "Nous cherchons à défendre les rêves de nos célèbres leaders comme feu le président Mouammar Kadhafi, d'une Afrique forte et unie, sans disparité de race, de sexe, de religion ou de couleur.",
+      "aboutPage.value5Title": "Travail d'Équipe",
+      "aboutPage.value5Desc": "Comme nos locaux le disent couramment 'une main ne peut jamais attacher un paquet', YANGG de son côté cherche à construire un lien fort entre nos jeunes Africains en encourageant le travail d'équipe.",
+      
       // Footer
       "footer.description": "Réseau des Jeunes Africains pour les Objectifs Mondiaux - Autonomiser la jeunesse africaine à façonner l'avenir par le leadership, l'innovation et l'engagement civique.",
       "footer.company": "Entreprise",
@@ -334,6 +410,7 @@ const resources = {
       "nav.programs": "Programas",
       "nav.events": "Eventos",
       "nav.gallery": "Galería",
+      "nav.team": "Equipo",
       "nav.testimonials": "Testimonios",
       "nav.getInTouch": "Contáctenos",
       
@@ -362,7 +439,7 @@ const resources = {
       "features.feature2Desc": "Programas de capacitación integral que desarrollan habilidades de liderazgo e innovación",
       "features.feature3Title": "Generar Impacto",
       "features.feature3Desc": "Los jóvenes empoderados crean soluciones sostenibles para sus comunidades",
-      "features.button": "Únete a Nuestros Programas",
+      "features.button": "Conócenos",
       
       // Schedule Section
       "schedule.tag": "NUESTRO IMPACTO",
@@ -407,6 +484,11 @@ const resources = {
       "gallery.filterConferences": "Conferencias",
       "gallery.filterTraining": "Capacitación",
       "gallery.filterWorkshops": "Talleres",
+      
+      // Team Section
+      "team.title": "Nuestra Estructura de Liderazgo",
+      "team.subtitle": "Conozca a los líderes dedicados que impulsan nuestra misión de empoderar a la juventud africana y transformar comunidades en todo el continente.",
+      "team.button": "Conocer a los Miembros de la Junta",
       
       // Testimonials Section
       "testimonials.title": "Historias de Nuestra Comunidad",
@@ -477,6 +559,38 @@ const resources = {
       "faq.a9": "Sí. Colaboramos con organizaciones locales e internacionales, gobiernos y socios del sector privado para amplificar nuestro impacto en toda África.",
       "faq.q10": "¿Cómo puedo apoyar el trabajo de YANGG?",
       "faq.a10": "Puedes apoyar a YANGG asociándote con nosotros, siendo voluntario, patrocinando proyectos o donando a nuestras iniciativas para promover el desarrollo juvenil y la transformación comunitaria.",
+      
+      // About Page
+      "aboutPage.title": "Acerca de",
+      "aboutPage.subtitle": "Red de Jóvenes Africanos para Objetivos Globales",
+      "aboutPage.description1": "YANGG es un conglomerado de jóvenes africanos vibrantes y apasionados que contribuyen al desarrollo de su sociedad en relación con los objetivos de desarrollo sostenible, desarrollo empresarial/emprendimiento y desarrollo de liderazgo.",
+      "aboutPage.description2": "Es una red de jóvenes africanos apasionados y futuros pioneros que intentan crear cambios y crear mejores sistemas en África mediante la realización de objetivos globales y redes que buscan reforzar las conexiones entre jóvenes defensores del cambio.",
+      "aboutPage.memberCountriesTitle": "Nuestros",
+      "aboutPage.memberCountriesHighlight": "Países Miembros",
+      "aboutPage.philosophyTitle": "Nuestra",
+      "aboutPage.philosophyHighlight": "Filosofía",
+      "aboutPage.philosophy1Title": "Orientado a Objetivos",
+      "aboutPage.philosophy1Desc": "YANGG está decidido a lograr sus tres objetivos principales en desarrollo de liderazgo, desarrollo empresarial/emprendimiento y ODS.",
+      "aboutPage.philosophy2Title": "Inclusividad",
+      "aboutPage.philosophy2Desc": "Queremos hacer que nuestro continente sea hospitalario tanto para ricos como para pobres, negros y blancos, jóvenes y viejos, fuertes y débiles, y lo más importante, las personas con discapacidad.",
+      "aboutPage.philosophy3Title": "Desarrollar el Potencial Africano",
+      "aboutPage.philosophy3Desc": "Dinamismo y asertividad juvenil para el mundo del mañana. África está dotada de una riqueza de talento que debe ser plenamente utilizada para alcanzar sus objetivos. YANGG está comprometido a maximizar el potencial de los jóvenes africanos.",
+      "aboutPage.philosophy4Title": "Campeón del Crecimiento Africano",
+      "aboutPage.philosophy4Desc": "YANGG quisiera ver a los jóvenes africanos en la vanguardia, listos para trabajar por el mejoramiento de nuestro continente. Anticipamos que los jóvenes reconocerán que son las soluciones a sus preocupaciones y problemas.",
+      "aboutPage.philosophy5Title": "Colaboración/Asociación",
+      "aboutPage.philosophy5Desc": "En el curso de nuestro trabajo, esperamos unir fuerzas con las partes interesadas necesarias, agencias gubernamentales, individuos clave e instituciones corporativas.",
+      "aboutPage.valuesTitle": "Nuestros",
+      "aboutPage.valuesHighlight": "Valores",
+      "aboutPage.value1Title": "Asociación",
+      "aboutPage.value1Desc": "Sabiendo que ningún océano produce su propia agua, como los mares y ríos que se unen para formar el océano, YANGG no podía ser indiferente y por esa razón se asociará con otras organizaciones que comparten su sueño.",
+      "aboutPage.value2Title": "Integridad",
+      "aboutPage.value2Desc": "La integridad humana no es un hecho debatible, y como humano en el planeta tierra, todos los humanos deben recibir el debido respeto. La humanidad es nuestra religión más caritativa.",
+      "aboutPage.value3Title": "Innovación",
+      "aboutPage.value3Desc": "Deseamos hacer de nuestro continente una hermosa joya. Por esta razón, YANGG desea alentar a los jóvenes africanos a ser innovadores.",
+      "aboutPage.value4Title": "Panafricanismo",
+      "aboutPage.value4Desc": "Buscamos defender los sueños de nuestros famosos líderes como el difunto presidente Muammar Gaddafi, de una África fuerte y unida, sin disparidad de raza, sexo, religión o color.",
+      "aboutPage.value5Title": "Trabajo en Equipo",
+      "aboutPage.value5Desc": "Como nuestros locales suelen decir 'una mano nunca puede atar un paquete', YANGG por su parte busca construir un vínculo fuerte entre nuestros jóvenes africanos fomentando el trabajo en equipo.",
       
       // Footer
       "footer.description": "Red de Jóvenes Africanos para Objetivos Globales - Empoderando a la juventud africana para dar forma al futuro a través del liderazgo, la innovación y el compromiso cívico.",

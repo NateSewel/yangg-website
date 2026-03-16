@@ -31,7 +31,7 @@ const PricingSection = () => {
           {/* Starter Plan */}
           <motion.div 
             variants={fadeIn('right', 0.5)}
-            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
+            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border-2 border-[#f0c630]"
           >
             <motion.h3 
               variants={fadeIn('up', 0.6)}
@@ -50,7 +50,7 @@ const PricingSection = () => {
           {/* Business Plan */}
           <motion.div 
             variants={fadeIn('left', 0.5)}
-            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg"
+            className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg border-2 border-[#f0c630]"
           >
             <motion.h3 
               variants={fadeIn('up', 0.6)}
@@ -110,7 +110,7 @@ const PricingSection = () => {
               variants={fadeIn('up', 1.3)}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors cursor-pointer"
+              className="bg-[#32a8ed] text-white px-6 py-3 rounded-lg hover:bg-[#2a8bc4] transition-colors cursor-pointer"
             >
               Get Started
             </motion.button>
