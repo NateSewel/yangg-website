@@ -103,17 +103,6 @@ const AboutPage = () => {
           >
             {t('aboutPage.subtitle')}
           </motion.p>
-          <motion.div
-            variants={fadeIn('up', 0.6)}
-            className="mt-8 flex justify-center"
-          >
-            <Link
-              to="/programs"
-              className="inline-flex items-center justify-center rounded-full bg-[#32a8ed] px-6 py-3 text-sm sm:text-base font-semibold text-white hover:bg-[#2a8bc4] transition-colors"
-            >
-              {t('aboutPage.programsLink')}
-            </Link>
-          </motion.div>
         </motion.div>
 
         {/* Main Description */}
