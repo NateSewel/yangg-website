@@ -99,21 +99,8 @@ const GallerySection = () => {
         variants={fadeIn('up', 0.2)}
         initial="hidden"
         whileInView="show"
-        className="text-center mb-8 md:mb-12"
+        className="mb-8 md:mb-12"
       >
-        <motion.h2 
-          variants={textVariant(0.2)}
-          className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 md:mb-4 text-gray-900 dark:text-white"
-        >
-          {t('gallery.title')}
-        </motion.h2>
-        <motion.p 
-          variants={fadeIn('up', 0.4)}
-          className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6 md:mb-8 text-sm sm:text-base"
-        >
-          {t('gallery.subtitle')}
-        </motion.p>
-
         <motion.div 
           variants={fadeIn('up', 0.5)}
           className="flex flex-wrap justify-center gap-2 md:gap-3"

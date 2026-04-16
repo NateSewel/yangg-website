@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { FaGlobeAfrica, FaStar } from "react-icons/fa";
 import { useTranslation } from 'react-i18next'
-import heroImage from '../assets/hero-image.png'
+import heroImage from '../assets/africa-hero.jpg'
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -73,7 +73,7 @@ const Hero = () => {
         <div className="relative max-w-lg mx-auto md:max-w-none">
           <img
             src={heroImage}
-            alt="Team meeting"
+            alt="Africa hero"
             className="rounded-lg relative z-10 hover:scale-[1.02] transition-transform duration-300 w-full shadow-xl"
           />
         </div>

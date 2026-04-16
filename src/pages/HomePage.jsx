@@ -1,18 +1,7 @@
 import React from 'react'
 import Hero from '../components/Hero'
-import CompanyLogo from '../components/CompanyLogo'
-import PurposeSection from '../components/PurposeSection'
-import FeaturesSection from '../components/FeaturesSection'
-import ScheduleSection from '../components/ScheduleSection'
-import MonitorSection from '../components/MonitorSection'
-import ServicesSection from '../components/ServicesSection'
-import ValuesSection from '../components/ValuesSection'
-import EventsSection from '../components/EventsSection'
-import GallerySection from '../components/GallerySection'
 import TeamSection from '../components/TeamSection'
 import TestimonialsSection from '../components/TestimonialsSection'
-import FAQSection from '../components/FAQSection'
-import NewsletterSection from '../components/NewsletterSection'
 import ContactSection from '../components/ContactSection'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -24,19 +13,8 @@ const HomePage = () => {
       <div className="overflow-hidden">
         <Navbar />
         <Hero />
-        <CompanyLogo />
-        <PurposeSection />
-        <FeaturesSection />
-        <ScheduleSection />
-        <MonitorSection />
-        <ServicesSection />
-        <ValuesSection />
-        <EventsSection />
-        <GallerySection />
         <TeamSection />
         <TestimonialsSection />
-        <FAQSection />
-        <NewsletterSection />
         <ContactSection />
         <Footer />
       </div>

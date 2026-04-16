@@ -1,10 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { fadeIn, textVariant } from '../utils/motion'
 import { FaGlobeAfrica, FaHandshake, FaLightbulb, FaUsers, FaBullseye, FaHeart } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import FeaturesSection from '../components/FeaturesSection'
+import ScheduleSection from '../components/ScheduleSection'
+import MonitorSection from '../components/MonitorSection'
 
 const AboutPage = () => {
   const { t } = useTranslation()
@@ -99,6 +103,17 @@ const AboutPage = () => {
           >
             {t('aboutPage.subtitle')}
           </motion.p>
+          <motion.div
+            variants={fadeIn('up', 0.6)}
+            className="mt-8 flex justify-center"
+          >
+            <Link
+              to="/programs"
+              className="inline-flex items-center justify-center rounded-full bg-[#32a8ed] px-6 py-3 text-sm sm:text-base font-semibold text-white hover:bg-[#2a8bc4] transition-colors"
+            >
+              {t('aboutPage.programsLink')}
+            </Link>
+          </motion.div>
         </motion.div>
 
         {/* Main Description */}
@@ -216,6 +231,10 @@ const AboutPage = () => {
             ))}
           </div>
         </motion.div>
+
+        <FeaturesSection />
+        <ScheduleSection />
+        <MonitorSection />
       </div>
 
       <Footer />

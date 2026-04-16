@@ -106,13 +106,13 @@ const TestimonialsSection = () => {
               >
                 <motion.div 
                   variants={fadeIn('down', 0.4 * (index + 1))}
-                  className="w-24 h-24 mx-auto mb-4"
+                  className="w-24 h-24 mx-auto mb-4 flex items-center justify-center overflow-hidden rounded-full bg-white dark:bg-slate-900 border-2 border-[#f0c630]"
                 >
                   <motion.img
                     variants={fadeIn('up', 0.5 * (index + 1))}
                     src={testimonial.image}
                     alt={testimonial.name}
-                    className="w-full h-full object-cover rounded-full"
+                    className="w-full h-full min-w-full min-h-full object-cover object-center rounded-full"
                   />
                 </motion.div>
                 <motion.div 
