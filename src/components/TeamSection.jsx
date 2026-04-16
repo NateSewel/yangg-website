@@ -178,11 +178,11 @@ const TeamSection = () => {
               className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all border-2 border-[#f0c630] dark:border-[#f0c630]"
             >
               {/* Image Container */}
-              <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden bg-gray-200 dark:bg-gray-700">
+              <div className="relative w-full aspect-[3/4] overflow-hidden bg-gray-200 dark:bg-gray-700">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
+                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-300 hover:scale-110"
                 />
               </div>
 

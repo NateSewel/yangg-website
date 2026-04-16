@@ -1,30 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { HiCalendar, HiLocationMarker, HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 import { eventsData } from '../data/eventsData'
+import { getAllEvents } from '../services/eventsService'
 
 const EventsSection = () => {
   const { t } = useTranslation()
   const [currentPage, setCurrentPage] = useState(1)
   const [filter, setFilter] = useState('all')
+  const [events, setEvents] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
   const itemsPerPage = 6
 
+  // Fetch events from Supabase on mount
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true)
+      const { data, error } = await getAllEvents()
+      
+      if (error || !data || data.length === 0) {
+        // Fall back to static data if Supabase fails or returns no data
+        console.log('Using static events data')
+        setEvents(eventsData.slice(0, 12))
+        setError(null)
+      } else {
+        // Map Supabase data to match static data structure
+        const mappedEvents = data.map(event => ({
+          ...event,
+          shortDescription: event.short_description || event.shortDescription
+        }))
+        // Use Supabase data (limit to 12 for home page)
+        setEvents(mappedEvents.slice(0, 12))
+        setError(null)
+      }
+      
+      setLoading(false)
+    }
+
+    fetchEvents()
+  }, [])
+
   // Use real events data and take only the first 12 for the home page
-  const allEvents = eventsData.slice(0, 12)
+  const allEvents = events
   
   // Filter events based on selected category
-  const events = filter === 'all' 
+  const filteredEvents = filter === 'all' 
     ? allEvents 
     : allEvents.filter(event => event.category === filter)
 
   // Calculate pagination
-  const totalPages = Math.ceil(events.length / itemsPerPage)
+  const totalPages = Math.ceil(filteredEvents.length / itemsPerPage)
   const startIndex = (currentPage - 1) * itemsPerPage
   const endIndex = startIndex + itemsPerPage
-  const currentEvents = events.slice(startIndex, endIndex)
+  const currentEvents = filteredEvents.slice(startIndex, endIndex)
 
   const handlePrevPage = () => {
     setCurrentPage(prev => Math.max(prev - 1, 1))
@@ -92,6 +124,22 @@ const EventsSection = () => {
           {t('events.subtitle')}
         </motion.p>
       </motion.div>
+
+      {/* Loading State */}
+      {loading && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-12"
+        >
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#32a8ed]"></div>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">Loading events...</p>
+        </motion.div>
+      )}
+
+      {/* Content */}
+      {!loading && (
+        <>
 
       {/* Filter Buttons */}
       <motion.div
@@ -255,7 +303,7 @@ const EventsSection = () => {
           animate={{ opacity: 1 }}
           className="text-center mt-4 text-sm text-gray-600 dark:text-gray-400"
         >
-          Showing {startIndex + 1}-{Math.min(endIndex, events.length)} of {events.length} events
+          Showing {startIndex + 1}-{Math.min(endIndex, filteredEvents.length)} of {filteredEvents.length} events
         </motion.p>
       )}
 
@@ -276,6 +324,8 @@ const EventsSection = () => {
           </motion.button>
         </Link>
       </motion.div>
+      </>
+      )}
     </section>
   )
 }

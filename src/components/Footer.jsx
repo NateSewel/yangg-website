@@ -93,17 +93,16 @@ const Footer = () => {
           >
             <motion.div 
               variants={fadeIn('down', 0.5)}
-              className="flex items-center gap-3 mb-6"
+              className="flex items-center gap-2 mb-6 max-w-[180px]"
             >
-              <img src={logo} alt="YANGG Logo" className="h-12 w-auto" />
-              <div className="flex flex-col">
-                <span className="text-sm font-semibold text-[#f0c630] leading-tight tracking-wide">
-                  Young Africans Network
-                </span>
-                <span className="text-sm font-semibold text-[#f0c630] leading-tight tracking-wide">
-                  for Global Goals
-                </span>
-              </div>
+              <img
+                src={logo}
+                alt="YANGG Logo"
+                className="h-8 w-auto max-h-10 max-w-[72px] object-contain"
+              />
+              <span className="text-sm sm:text-base font-bold text-[#f0c630] tracking-wide whitespace-nowrap">
+                YANGG
+              </span>
             </motion.div>
             <motion.p 
               variants={fadeIn('up', 0.6)}

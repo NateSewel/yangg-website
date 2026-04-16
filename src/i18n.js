@@ -31,14 +31,16 @@ const resources = {
       "about.feature2Desc": "To build a network of global leaders who are passionate about African transformation.",
       
       // Features Section
-      "features.title": "How We Empower African Youth",
-      "features.subtitle": "Our three-step approach to building the next generation of African leaders",
-      "features.feature1Title": "Identify Potential",
-      "features.feature1Desc": "We discover and nurture young African leaders with passion for positive change",
-      "features.feature2Title": "Build Capacity",
-      "features.feature2Desc": "Comprehensive training programs that develop leadership and innovation skills",
-      "features.feature3Title": "Drive Impact",
-      "features.feature3Desc": "Empowered youth create sustainable solutions for their communities",
+      "features.title": "How We Empower the African Youth",
+      "features.subtitle": "Our Four-step approach to building the next generation of African leaders",
+      "features.feature1Title": "Community Impact",
+      "features.feature1Desc": "Empowering youth to create sustainable solutions that drive positive change in their communities.",
+      "features.feature2Title": "Individual Development",
+      "features.feature2Desc": "Building leadership skills and fostering innovation through comprehensive training and mentorship programs.",
+      "features.feature3Title": "Business & Entrepreneurship Opportunities",
+      "features.feature3Desc": "Providing resources and networks to launch and scale sustainable businesses across Africa.",
+      "features.feature4Title": "International Cooperation",
+      "features.feature4Desc": "Facilitating cross-border collaboration across 17 African countries towards the SDGs.",
       "features.button": "Learn About Us",
       
       // Schedule Section
@@ -232,13 +234,15 @@ const resources = {
       
       // Features Section
       "features.title": "Comment Nous Autonomisons la Jeunesse Africaine",
-      "features.subtitle": "Notre approche en trois étapes pour former la prochaine génération de leaders africains",
-      "features.feature1Title": "Identifier le Potentiel",
-      "features.feature1Desc": "Nous découvrons et cultivons de jeunes leaders africains passionnés par le changement positif",
-      "features.feature2Title": "Développer les Capacités",
-      "features.feature2Desc": "Programmes de formation complets qui développent le leadership et les compétences en innovation",
-      "features.feature3Title": "Générer l'Impact",
-      "features.feature3Desc": "Les jeunes autonomisés créent des solutions durables pour leurs communautés",
+      "features.subtitle": "Notre approche en quatre étapes pour former la prochaine génération de leaders africains",
+      "features.feature1Title": "Impact Communautaire",
+      "features.feature1Desc": "Autonomiser les jeunes à créer des solutions durables qui stimulent le changement positif dans leurs communautés.",
+      "features.feature2Title": "Développement Individuel",
+      "features.feature2Desc": "Développer les compétences en leadership et favoriser l'innovation grâce à des programmes de formation et de mentorat complets.",
+      "features.feature3Title": "Opportunités d'Affaires et d'Entrepreneuriat",
+      "features.feature3Desc": "Fournir des ressources et des réseaux pour lancer et développer des entreprises durables à travers l'Afrique.",
+      "features.feature4Title": "Coopération Internationale",
+      "features.feature4Desc": "Faciliter la collaboration transfrontalière dans 17 pays africains vers les ODD.",
       "features.button": "En Savoir Plus Sur Nous",
       
       // Schedule Section
@@ -432,13 +436,15 @@ const resources = {
       
       // Features Section
       "features.title": "Cómo Empoderamos a la Juventud Africana",
-      "features.subtitle": "Nuestro enfoque de tres pasos para formar la próxima generación de líderes africanos",
-      "features.feature1Title": "Identificar Potencial",
-      "features.feature1Desc": "Descubrimos y cultivamos jóvenes líderes africanos con pasión por el cambio positivo",
-      "features.feature2Title": "Desarrollar Capacidad",
-      "features.feature2Desc": "Programas de capacitación integral que desarrollan habilidades de liderazgo e innovación",
-      "features.feature3Title": "Generar Impacto",
-      "features.feature3Desc": "Los jóvenes empoderados crean soluciones sostenibles para sus comunidades",
+      "features.subtitle": "Nuestro enfoque de cuatro pasos para formar la próxima generación de líderes africanos",
+      "features.feature1Title": "Impacto Comunitario",
+      "features.feature1Desc": "Empoderar a los jóvenes para crear soluciones sostenibles que impulsen el cambio positivo en sus comunidades.",
+      "features.feature2Title": "Desarrollo Individual",
+      "features.feature2Desc": "Desarrollar habilidades de liderazgo y fomentar la innovación a través de programas integrales de capacitación y mentoría.",
+      "features.feature3Title": "Oportunidades de Negocios y Emprendimiento",
+      "features.feature3Desc": "Proporcionar recursos y redes para lanzar y escalar negocios sostenibles en toda África.",
+      "features.feature4Title": "Cooperación Internacional",
+      "features.feature4Desc": "Facilitar la colaboración transfronteriza en 17 países africanos hacia los ODS.",
       "features.button": "Conócenos",
       
       // Schedule Section

@@ -1,20 +1,49 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { fadeIn, textVariant } from '../utils/motion'
 import { FaCalendar, FaMapMarkerAlt, FaArrowRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import { eventsData } from '../data/eventsData'
+import { getAllEvents } from '../services/eventsService'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const EventsPage = () => {
   const [filter, setFilter] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
-  const eventsPerPage = 6 // Changed from 9 to 6 for 3x2 grid
+  const [events, setEvents] = useState([])
+  const [loading, setLoading] = useState(true)
+  const eventsPerPage = 6
+
+  // Fetch events from Supabase on mount
+  useEffect(() => {
+    const fetchEvents = async () => {
+      setLoading(true)
+      const { data, error } = await getAllEvents()
+      
+      if (error || !data || data.length === 0) {
+        // Fall back to static data if Supabase fails or returns no data
+        console.log('Using static events data')
+        setEvents(eventsData)
+      } else {
+        // Map Supabase data to match static data structure
+        const mappedEvents = data.map(event => ({
+          ...event,
+          shortDescription: event.short_description || event.shortDescription
+        }))
+        // Use Supabase data
+        setEvents(mappedEvents)
+      }
+      
+      setLoading(false)
+    }
+
+    fetchEvents()
+  }, [])
 
   const filteredEvents = filter === 'all' 
-    ? eventsData 
-    : eventsData.filter(event => event.category === filter)
+    ? events 
+    : events.filter(event => event.category === filter)
 
   const totalPages = Math.ceil(filteredEvents.length / eventsPerPage)
   const startIndex = (currentPage - 1) * eventsPerPage
@@ -85,7 +114,20 @@ const EventsPage = () => {
           ))}
         </motion.div>
 
+        {/* Loading State */}
+        {loading && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-center py-12"
+          >
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#32a8ed]"></div>
+            <p className="mt-4 text-gray-600 dark:text-gray-400 font-['Montserrat']">Loading events...</p>
+          </motion.div>
+        )}
+
         {/* Events Grid */}
+        {!loading && (
         <motion.div
           key={filter}
           initial={{ opacity: 0 }}
@@ -171,9 +213,10 @@ const EventsPage = () => {
           ))
           )}
         </motion.div>
+        )}
 
         {/* Pagination */}
-        {totalPages > 1 && (
+        {!loading && totalPages > 1 && (
           <div className="flex flex-col items-center gap-3 md:gap-4">
             <div className="flex items-center gap-1.5 md:gap-2">
               <button

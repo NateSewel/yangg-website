@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { HiX, HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import { useTranslation } from 'react-i18next'
 import { generateGalleryItems } from '../data/galleryData'
+import { getAllGalleryItems } from '../services/galleryService'
 
 const GallerySection = () => {
   const { t } = useTranslation()
@@ -11,9 +12,37 @@ const GallerySection = () => {
   const [activeFilter, setActiveFilter] = useState('all')
   const [currentPage, setCurrentPage] = useState(1)
   const [direction, setDirection] = useState(0)
+  const [galleryItems, setGalleryItems] = useState([])
+  const [loading, setLoading] = useState(true)
   const itemsPerPage = 6
 
-  const galleryItems = generateGalleryItems()
+  // Fetch gallery items from Supabase on mount
+  useEffect(() => {
+    const fetchGalleryItems = async () => {
+      setLoading(true)
+      const { data, error } = await getAllGalleryItems()
+      
+      if (error || !data || data.length === 0) {
+        // Fall back to static data if Supabase fails or returns no data
+        console.log('Using static gallery data')
+        setGalleryItems(generateGalleryItems())
+      } else {
+        // Use Supabase data - map to match expected structure
+        const mappedData = data.map(item => ({
+          id: item.id,
+          image: item.image_url,
+          title: item.title,
+          category: item.category,
+          description: item.description || 'YANGG event and program activities'
+        }))
+        setGalleryItems(mappedData)
+      }
+      
+      setLoading(false)
+    }
+
+    fetchGalleryItems()
+  }, [])
 
   const filters = [
     { id: 'all', label: t('gallery.filterAll') },
@@ -108,6 +137,21 @@ const GallerySection = () => {
         </motion.div>
       </motion.div>
 
+      {/* Loading State */}
+      {loading && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-12"
+        >
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#32a8ed]"></div>
+          <p className="mt-4 text-gray-600 dark:text-gray-400">Loading gallery...</p>
+        </motion.div>
+      )}
+
+      {/* Content */}
+      {!loading && (
+        <>
       <AnimatePresence mode="wait" custom={direction}>
         <motion.div 
           key={currentPage}
@@ -116,7 +160,7 @@ const GallerySection = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: direction > 0 ? -300 : 300 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6 md:mb-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-4 md:gap-6 mb-6 md:mb-8"
         >
           {currentItems.map((item, index) => (
             <motion.div
@@ -126,13 +170,15 @@ const GallerySection = () => {
               transition={{ duration: 0.3, delay: index * 0.05 }}
               whileHover={{ scale: 1.05 }}
               onClick={() => setSelectedImage(item)}
-              className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all"
+              className="relative group cursor-pointer rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all h-full flex flex-col"
             >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-48 sm:h-56 md:h-64 object-cover"
-              />
+              <div className="relative aspect-[4/3] overflow-hidden bg-gray-200 dark:bg-gray-700">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-6 text-white">
                   <h3 className="text-base md:text-lg font-bold mb-1">{item.title}</h3>
@@ -227,6 +273,8 @@ const GallerySection = () => {
           </motion.div>
         )}
       </AnimatePresence>
+      </>
+      )}
     </section>
   )
 }

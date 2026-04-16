@@ -1,18 +1,53 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { fadeIn, textVariant } from '../utils/motion'
 import { FaCalendar, FaMapMarkerAlt, FaArrowLeft, FaUsers, FaBullseye, FaTrophy } from 'react-icons/fa'
 import { HiX } from 'react-icons/hi'
 import { eventsData } from '../data/eventsData'
+import { getEventById } from '../services/eventsService'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
 const EventDetailPage = () => {
   const { eventId } = useParams()
   const navigate = useNavigate()
-  const event = eventsData.find(e => e.id === eventId)
+  const [event, setEvent] = useState(null)
+  const [loading, setLoading] = useState(true)
   const [showImageModal, setShowImageModal] = useState(false)
+
+  // Fetch event from Supabase on mount
+  useEffect(() => {
+    const fetchEvent = async () => {
+      setLoading(true)
+      const { data, error } = await getEventById(eventId)
+      
+      if (error || !data) {
+        // Fall back to static data if Supabase fails
+        console.log('Using static event data')
+        const staticEvent = eventsData.find(e => e.id === eventId)
+        setEvent(staticEvent)
+      } else {
+        // Use Supabase data
+        setEvent(data)
+      }
+      
+      setLoading(false)
+    }
+
+    fetchEvent()
+  }, [eventId])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-white dark:bg-gray-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#32a8ed] mb-4"></div>
+          <p className="text-gray-600 dark:text-gray-400 font-['Montserrat']">Loading event...</p>
+        </div>
+      </div>
+    )
+  }
 
   if (!event) {
     return (

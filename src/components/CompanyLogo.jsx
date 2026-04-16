@@ -9,8 +9,8 @@ const CompanyLogo = () => {
 
   return (
     <div className="w-full container mx-auto py-20 overflow-hidden flex  flex-col sm:flex-row sm:items-center items-start ">
-      <div className="w-[300px] shrink-0 px-8 text-gray-600 border-l-4 border-blue-500 bg-white py-2 z-10 sm:text-base text-xl font-semibold sm:text-left  mb-8 sm:mb-0">
-        Operating across <br /> Nigeria, Gambia, Kenya & Ghana
+      <div className="w-[300px] shrink-0 px-8 text-gray-600 dark:text-gray-400 border-l-4 border-blue-500 bg-white dark:bg-gray-800 py-2 z-10 sm:text-base text-xl font-semibold sm:text-left mb-8 sm:mb-0">
+        Trusted and Supported By
       </div>
       <div className="flex animate-marquee whitespace-nowrap">
         {logos.map((logo, index) => (
