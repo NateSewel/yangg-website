@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { fadeIn, textVariant } from "../utils/motion";
 import { FaGlobeAfrica, FaStar } from "react-icons/fa";
 import { useTranslation } from 'react-i18next'
-import heroImage from '../assets/africa-hero.jpg'
+import heroImage from '../assets/africa-hero.png'
 
 const Hero = () => {
   const { t } = useTranslation()
