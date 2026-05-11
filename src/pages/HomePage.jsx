@@ -1,5 +1,6 @@
 import React from 'react'
 import Hero from '../components/Hero'
+import AboutBriefSection from '../components/AboutBriefSection'
 import TeamSection from '../components/TeamSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import ContactSection from '../components/ContactSection'
@@ -13,6 +14,7 @@ const HomePage = () => {
       <div className="overflow-hidden">
         <Navbar />
         <Hero />
+        <AboutBriefSection />
         <TeamSection />
         <TestimonialsSection />
         <ContactSection />

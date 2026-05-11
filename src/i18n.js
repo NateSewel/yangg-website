@@ -29,7 +29,18 @@ const resources = {
       "about.feature1Desc": "To raise global youth leaders who are rooted in sustainability for African transformation.",
       "about.feature2Title": "Our Mission",
       "about.feature2Desc": "To build a network of global leaders who are passionate about African transformation.",
-      
+
+      // About Brief Section
+      "aboutBrief.tag": "WHO WE ARE",
+      "aboutBrief.title": "Empowering Young African Leaders Across the Continent",
+      "aboutBrief.description": "YANGG is a pan-African youth-led organization building the next generation of African leaders through leadership development, entrepreneurship, and sustainable development initiatives.",
+      "aboutBrief.stat1": "Active Members",
+      "aboutBrief.stat2": "Member Countries",
+      "aboutBrief.stat3": "Projects Completed",
+      "aboutBrief.stat4": "Communities Impacted",
+      "aboutBrief.content1": "We are a network of passionate young Africans united by a shared vision of transforming our continent. Our members are not just beneficiaries but active drivers of change in their communities.",
+      "aboutBrief.content2": "Through our programs, we've empowered thousands of youth to become leaders, entrepreneurs, and change-makers who are building homegrown solutions for African challenges.",
+
       // Features Section
       "features.title": "How We Empower the African Youth",
       "features.subtitle": "Our Four-step approach to building the next generation of African leaders",
@@ -231,6 +242,17 @@ const resources = {
       "about.feature1Desc": "Nous croyons que les solutions qui transformeront l'Afrique doivent venir des Africains, enracinées dans les connaissances et l'innovation locales.",
       "about.feature2Title": "Autonomisation des Jeunes",
       "about.feature2Desc": "Nous investissons dans le potentiel des jeunes, leur fournissant des compétences, des réseaux et des plateformes pour devenir des leaders et des agents de changement.",
+
+      // About Brief Section
+      "aboutBrief.tag": "QUI NOUS SOMMES",
+      "aboutBrief.title": "Autonomiser les Jeunes Leaders Africains à Travers le Continent",
+      "aboutBrief.description": "YANGG est une organisation panafricaine dirigée par des jeunes qui construit la prochaine génération de leaders africains grâce au développement du leadership, l'entrepreneuriat et les initiatives de développement durable.",
+      "aboutBrief.stat1": "Membres Actifs",
+      "aboutBrief.stat2": "Pays Membres",
+      "aboutBrief.stat3": "Projets Complétés",
+      "aboutBrief.stat4": "Communautés Impactées",
+      "aboutBrief.content1": "Nous sommes un réseau de jeunes Africains passionnés unis par une vision partagée de la transformation de notre continent. Nos membres ne sont pas seulement des bénéficiaires mais des acteurs actifs du changement dans leurs communautés.",
+      "aboutBrief.content2": "À travers nos programmes, nous avons autonomisé des milliers de jeunes pour devenir des leaders, entrepreneurs et créateurs de changement qui construisent des solutions locales pour les défis africains.",
       
       // Features Section
       "features.title": "Comment Nous Autonomisons la Jeunesse Africaine",
@@ -433,6 +455,17 @@ const resources = {
       "about.feature1Desc": "Creemos que las soluciones que transformarán África deben venir de los africanos, arraigadas en el conocimiento y la innovación locales.",
       "about.feature2Title": "Empoderamiento Juvenil",
       "about.feature2Desc": "Invertimos en el potencial de los jóvenes, proporcionándoles habilidades, redes y plataformas para convertirse en líderes y agentes de cambio.",
+
+      // About Brief Section
+      "aboutBrief.tag": "QUIÉNES SOMOS",
+      "aboutBrief.title": "Empoderando a los Jóvenes Líderes Africanos a Través del Continente",
+      "aboutBrief.description": "YANGG es una organización panafricana dirigida por jóvenes que construye la próxima generación de líderes africanos a través del desarrollo del liderazgo, el emprendimiento y las iniciativas de desarrollo sostenible.",
+      "aboutBrief.stat1": "Miembros Activos",
+      "aboutBrief.stat2": "Países Miembros",
+      "aboutBrief.stat3": "Proyectos Completados",
+      "aboutBrief.stat4": "Comunidades Impactadas",
+      "aboutBrief.content1": "Somos una red de apasionados jóvenes africanos unidos por una visión compartida de transformar nuestro continente. Nuestros miembros no son solo beneficiarios sino conductores activos del cambio en sus comunidades.",
+      "aboutBrief.content2": "A través de nuestros programas, hemos empoderado a miles de jóvenes para convertirse en líderes, emprendedores y creadores de cambio que están construyendo soluciones locales para los desafíos africanos.",
       
       // Features Section
       "features.title": "Cómo Empoderamos a la Juventud Africana",
