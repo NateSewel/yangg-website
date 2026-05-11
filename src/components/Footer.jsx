@@ -201,7 +201,7 @@ const Footer = () => {
         </motion.div>
 
         {/* Back to Top Button */}
-        <motion.div
+        {/* <motion.div
           variants={fadeIn("up", 0.85)}
           className="flex justify-center mb-8"
         >
@@ -214,7 +214,7 @@ const Footer = () => {
             <FaArrowUp className="w-4 h-4" />
             Back to Top
           </motion.button>
-        </motion.div>
+        </motion.div> */}
 
         {/* Copyright */}
         <motion.div
