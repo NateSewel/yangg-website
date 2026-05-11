@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import AboutBriefSection from '../components/AboutBriefSection'
+import FeaturesSection from '../components/FeaturesSection'
 import TeamSection from '../components/TeamSection'
 import TestimonialsSection from '../components/TestimonialsSection'
 import ContactSection from '../components/ContactSection'
@@ -15,6 +16,7 @@ const HomePage = () => {
         <Navbar />
         <Hero />
         <AboutBriefSection />
+        <FeaturesSection />
         <TeamSection />
         <TestimonialsSection />
         <ContactSection />
