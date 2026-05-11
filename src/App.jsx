@@ -1,25 +1,27 @@
-import './App.css'
-import { Routes, Route } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import EventsPage from './pages/EventsPage'
-import EventDetailPage from './pages/EventDetailPage'
-import AboutPage from './pages/AboutPage'
-import ProgramsPage from './pages/ProgramsPage'
-import GalleryPage from './pages/GalleryPage'
-import AdminLogin from './pages/AdminLogin'
-import AdminDashboard from './pages/AdminDashboard'
-import AdminHome from './pages/AdminHome'
-import AdminEvents from './pages/AdminEvents'
-import AdminEventForm from './pages/AdminEventForm'
-import AdminGallery from './pages/AdminGallery'
-import AdminGalleryForm from './pages/AdminGalleryForm'
-import ProtectedRoute from './components/ProtectedRoute'
-import ScrollToTop from './components/ScrollToTop'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import EventsPage from "./pages/EventsPage";
+import EventDetailPage from "./pages/EventDetailPage";
+import AboutPage from "./pages/AboutPage";
+import ProgramsPage from "./pages/ProgramsPage";
+import GalleryPage from "./pages/GalleryPage";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AdminHome from "./pages/AdminHome";
+import AdminEvents from "./pages/AdminEvents";
+import AdminEventForm from "./pages/AdminEventForm";
+import AdminGallery from "./pages/AdminGallery";
+import AdminGalleryForm from "./pages/AdminGalleryForm";
+import ProtectedRoute from "./components/ProtectedRoute";
+import ScrollToTop from "./components/ScrollToTop";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   return (
     <>
       <ScrollToTop />
+      <BackToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
@@ -48,7 +50,7 @@ function App() {
         </Route>
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
